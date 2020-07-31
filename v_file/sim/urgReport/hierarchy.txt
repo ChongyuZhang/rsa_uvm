@@ -1,0 +1,21 @@
+Design Hierarchy
+
+
+----------------
+SCORE  LINE   TOGGLE BRANCH    
+ 84.40  98.81  56.65  97.73 tb 
+  
+  ----------------
+  SCORE  LINE   TOGGLE BRANCH             
+   49.99 --      49.99 --     intf        
+   84.54  98.59  57.30  97.73 modmultiply 
+    
+    ----------------
+    SCORE  LINE   TOGGLE BRANCH             
+     86.66 100.00  59.97 100.00 modmultiply 
+     86.66 100.00  59.97 100.00 modsqr      
+
+----------------
+SCORE  LINE   TOGGLE BRANCH                              
+ 30.91  31.82 --      30.00 uvm_custom_install_recording 
+

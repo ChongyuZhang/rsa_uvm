@@ -1,0 +1,1519 @@
+===============================================================================
+Module : uvm_custom_install_recording
+===============================================================================
+SCORE  LINE   TOGGLE BRANCH 
+ 30.91  31.82 --      30.00 
+
+Source File(s) : 
+
+/opt/synopsys/vcs/O-2018.09-SP2/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv
+
+Module self-instances :
+
+SCORE  LINE   TOGGLE BRANCH NAME                         
+ 30.91  31.82 --      30.00 uvm_custom_install_recording 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : uvm_custom_install_recording
+
+             Line No.   Total   Covered  Percent
+TOTAL                       22        7    31.82
+ROUTINE            41        1        0     0.00
+INITIAL            56       21        7    33.33
+
+40                      
+41         0/1     ==>   import "DPI-C" function string getenv(input string env_name);
+42                      
+43                       `include "uvm_vcs_recorder.svh"
+44                       `include "uvm_vcs_record_interface.sv"
+45                      `endif
+46                      
+47                         uvm_cmdline_processor clp;
+48                         string tr_args[$];
+49                         uvm_coreservice_t cs;
+50                         uvm_vcs_tr_database vcs_db;
+51                         string env_str,vc_env_str="",sanity_file_name="";
+52                         int file_handle=0, is_sanity_exist=0;
+53                           
+54                         initial begin
+55                      
+56         1/1               clp = uvm_cmdline_processor::get_inst();
+57         1/1               cs = uvm_coreservice_t::get();
+58         1/1               env_str = getenv("SNPS_SIM_DEFAULT_GUI");
+59         1/1               vc_env_str = getenv("VC_HOME");
+60         1/1               if (vc_env_str!="")begin
+61         0/1     ==>           sanity_file_name = {vc_env_str,"/etc/.sanity"};
+62         0/1     ==>           file_handle = $fopen(sanity_file_name,"r");
+63         0/1     ==>           if (file_handle!=0) begin
+64         0/1     ==>               is_sanity_exist = 1;
+65         0/1     ==>               $fclose(file_handle);
+66                               end
+                   ==>  MISSING_ELSE
+67                           end
+                        MISSING_ELSE
+68                      
+69                           // Register the vcs_smartlog_catcher to dump messages into VPD
+70         1/1               if (clp.get_arg_matches("+UVM_LOG_RECORD", tr_args) && (!clp.get_arg_matches("+UVM_VERDI_TRACE", tr_args) 
+71                                                                                  && (env_str != "verdi") && !is_sanity_exist)) begin
+72                             static vcs_smartlog_catcher _vcs_catcher = new();
+73         0/1     ==>         uvm_report_cb::add(null,_vcs_catcher);
+74                           end
+                        MISSING_ELSE
+75                      
+76                           // Register the uvm_vcs_recorder to record transactions into VPD
+77         1/1               if (clp.get_arg_matches("+UVM_TR_RECORD", tr_args) && (!clp.get_arg_matches("+UVM_VERDI_TRACE", tr_args)
+78                                                                                  && (env_str != "verdi")&& !is_sanity_exist)) begin
+79         0/1     ==>        vcs_db = new();
+80         0/1     ==>        cs.set_default_tr_database(vcs_db);
+81         0/1     ==>        if (clp.get_arg_matches("+UVM_DISABLE_AUTO_COMPONENT", tr_args)) begin
+82         0/2     ==>  	 `uvm_info("VCS_TR_AUTO", "+UVM_DISABLE_AUTO_COMPONENT enabled but transaction recording enabled, usage model requires user to explicitly set recording_detail on components", UVM_MEDIUM)
+uvm_info("VCS_TR_AUTO", "+UVM_DISABLE_AUTO_COMPONENT enabled but transaction recording enabled, usage model requires user to explicitly set recording_detail on components", UVM_MEDIUM):
+82.1                    `ifdef ZEMI4UVM 
+82.2                          (* zemi4_uvm_attribute=1 *) 
+82.3                       `endif 
+82.4                       begin 
+82.5                         if (uvm_report_enabled(UVM_MEDIUM,UVM_INFO,"VCS_TR_AUTO")) 
+82.6       0/1     ==>         uvm_report_info ("VCS_TR_AUTO", "+UVM_DISABLE_AUTO_COMPONENT enabled but transaction recording enabled, usage model requires user to explicitly set recording_detail on components", UVM_MEDIUM, "/opt/synopsys/vcs/O-2018.09-SP2/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv", 82, "", 1); 
+82.7                       end
+                   ==>  MISSING_ELSE
+83                            end
+84                            else begin
+85         0/2     ==>  	 `uvm_info("VCS_TR_AUTO", "+UVM_TR_RECORD implicitly enables recording_details to UVM_FULL for all components. For explicit control use +UVM_DISABLE_AUTO_COMPONENT and set recording_detail on components accordingly", UVM_MEDIUM)
+uvm_info("VCS_TR_AUTO", "+UVM_TR_RECORD implicitly enables recording_details to UVM_FULL for all components. For explicit control use +UVM_DISABLE_AUTO_COMPONENT and set recording_detail on components accordingly", UVM_MEDIUM):
+85.1                    `ifdef ZEMI4UVM 
+85.2                          (* zemi4_uvm_attribute=1 *) 
+85.3                       `endif 
+85.4                       begin 
+85.5                         if (uvm_report_enabled(UVM_MEDIUM,UVM_INFO,"VCS_TR_AUTO")) 
+85.6       0/1     ==>         uvm_report_info ("VCS_TR_AUTO", "+UVM_TR_RECORD implicitly enables recording_details to UVM_FULL for all components. For explicit control use +UVM_DISABLE_AUTO_COMPONENT and set recording_detail on components accordingly", UVM_MEDIUM, "/opt/synopsys/vcs/O-2018.09-SP2/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv", 85, "", 1); 
+85.7                       end
+                   ==>  MISSING_ELSE
+86         0/1     ==>  	  uvm_config_db#(uvm_bitstream_t)::set(uvm_root::get(), "*", "recording_detail", UVM_FULL);
+87                            end
+88                           end
+                        MISSING_ELSE
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : uvm_custom_install_recording
+         Line No. Total Covered Percent 
+Branches          10    3       30.00   
+IF       60       3     1       33.33   
+IF       70       2     1       50.00   
+IF       77       5     1       20.00   
+
+
+60              if (vc_env_str!="")begin
+                -1-  
+61                  sanity_file_name = {vc_env_str,"/etc/.sanity"};
+62                  file_handle = $fopen(sanity_file_name,"r");
+63                  if (file_handle!=0) begin
+                    -2-  
+64                      is_sanity_exist = 1;
+                        ==>
+65                      $fclose(file_handle);
+66                  end
+                    MISSING_ELSE
+                    ==>
+67              end
+                MISSING_ELSE
+                ==>
+
+Branches:
+
+-1- -2- Status      
+1   1   Not Covered 
+1   0   Not Covered 
+0   -   Covered     
+
+
+70              if (clp.get_arg_matches("+UVM_LOG_RECORD", tr_args) && (!clp.get_arg_matches("+UVM_VERDI_TRACE", tr_args) 
+                -1-  
+71                                                                     && (env_str != "verdi") && !is_sanity_exist)) begin
+72                static vcs_smartlog_catcher _vcs_catcher = new();
+73                uvm_report_cb::add(null,_vcs_catcher);
+                  ==>
+74              end
+                MISSING_ELSE
+                ==>
+
+Branches:
+
+-1- Status      
+1   Not Covered 
+0   Covered     
+
+
+77              if (clp.get_arg_matches("+UVM_TR_RECORD", tr_args) && (!clp.get_arg_matches("+UVM_VERDI_TRACE", tr_args)
+                -1-  
+78                                                                     && (env_str != "verdi")&& !is_sanity_exist)) begin
+79               vcs_db = new();
+80               cs.set_default_tr_database(vcs_db);
+81               if (clp.get_arg_matches("+UVM_DISABLE_AUTO_COMPONENT", tr_args)) begin
+                 -2-  
+82         	 `uvm_info("VCS_TR_AUTO", "+UVM_DISABLE_AUTO_COMPONENT enabled but transaction recording enabled, usage model requires user to explicitly set recording_detail on components", UVM_MEDIUM)
+           	 -3-                                                                                                                                                                                         
+           	 ==>
+           	 MISSING_ELSE
+           	 ==>
+83               end
+84               else begin
+85         	 `uvm_info("VCS_TR_AUTO", "+UVM_TR_RECORD implicitly enables recording_details to UVM_FULL for all components. For explicit control use +UVM_DISABLE_AUTO_COMPONENT and set recording_detail on components accordingly", UVM_MEDIUM)
+           	 -4-                                                                                                                                                                                                                                   
+           	 ==>
+           	 MISSING_ELSE
+           	 ==>
+86         	  uvm_config_db#(uvm_bitstream_t)::set(uvm_root::get(), "*", "recording_detail", UVM_FULL);
+87               end
+88              end
+                MISSING_ELSE
+                ==>
+
+Branches:
+
+-1- -2- -3- -4- Status      
+1   1   1   -   Not Covered 
+1   1   0   -   Not Covered 
+1   0   -   1   Not Covered 
+1   0   -   0   Not Covered 
+0   -   -   -   Covered     
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : uvm_custom_install_recording
+===============================================================================
+
+Instance :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 30.91  31.82 --      30.00 
+
+
+Instance's subtree :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 30.91  31.82 --      30.00 
+
+
+Module : 
+
+SCORE  LINE   TOGGLE BRANCH NAME                         
+ 30.91  31.82 --      30.00 uvm_custom_install_recording 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : rsa_intf
+===============================================================================
+SCORE  LINE   TOGGLE BRANCH 
+ 49.99 --      49.99 --     
+
+Source File(s) : 
+
+/home/chongyu/project/rsa_uvm/v_file/sim/../rsa_intf.sv
+
+Module self-instances :
+
+SCORE  LINE   TOGGLE BRANCH NAME    
+ 49.99 --      49.99 --     tb.intf 
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : rsa_intf
+                Total Covered Percent 
+Totals          8     3       37.50   
+Total Bits      16392 8195    49.99   
+Total Bits 0->1 8196  4097    49.99   
+Total Bits 1->0 8196  4098    50.00   
+
+                          
+Ports          2 1 50.00  
+Port Bits      4 3 75.00  
+Port Bits 0->1 2 1 50.00  
+Port Bits 1->0 2 2 100.00 
+
+                                   
+Signals          6     2    33.33  
+Signal Bits      16388 8192 49.99  
+Signal Bits 0->1 8194  4096 49.99  
+Signal Bits 1->0 8194  4096 49.99  
+
+Port Details
+      Toggle Toggle 1->0 Toggle 0->1 Direction 
+clk   Yes    Yes         Yes         INPUT     
+reset No     Yes         No          INPUT     
+
+Signal Details
+                  Toggle Toggle 1->0 Toggle 0->1 
+indata[1023:0]    Yes    Yes         Yes         
+indata[2047:1024] No     No          No          
+inExp[0]          Yes    Yes         Yes         
+inExp[1]          No     No          No          
+inExp[1023:2]     Yes    Yes         Yes         
+inExp[2047:1024]  No     No          No          
+inMod[679:0]      Yes    Yes         Yes         
+inMod[680]        No     No          No          
+inMod[1023:681]   Yes    Yes         Yes         
+inMod[2047:1024]  No     No          No          
+cypher[1023:0]    Yes    Yes         Yes         
+cypher[2047:1024] No     No          No          
+ds                Yes    Yes         Yes         
+ready             Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb.intf
+===============================================================================
+
+Instance :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 49.99 --      49.99 --     
+
+
+Instance's subtree :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 49.99 --      49.99 --     
+
+
+Module : 
+
+SCORE  LINE   TOGGLE BRANCH NAME     
+ 49.99 --      49.99 --     rsa_intf 
+
+
+Parent : 
+
+SCORE  LINE   TOGGLE BRANCH NAME 
+ 87.50 100.00  75.00 --     tb   
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : v_ARS_RSACypher
+===============================================================================
+SCORE  LINE   TOGGLE BRANCH 
+ 80.85  97.56  49.99  95.00 
+
+Source File(s) : 
+
+/home/chongyu/project/rsa_uvm/v_file/sim/../../d_file/v_ARS_RSACypher.v
+
+Module self-instances :
+
+SCORE  LINE   TOGGLE BRANCH NAME           
+ 80.85  97.56  49.99  95.00 tb.modmultiply 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : v_ARS_RSACypher
+
+             Line No.   Total   Covered  Percent
+TOTAL                       41       40    97.56
+ALWAYS             68       13       13   100.00
+ALWAYS            100        8        8   100.00
+ALWAYS            122        8        8   100.00
+ALWAYS            138       12       11    91.67
+
+67                      	begin
+68         1/1          		if(reset == 1'b1)
+69                      		begin
+70         1/1          			count <= 'b0;
+71         1/1          			done  <= 'b0;
+72                      		end
+73         1/1          		else if(done == 1'b1 && ds == 1'b1)
+74                      		begin
+75                      			//first time through
+76         1/1          			count	<=	{1'b0,inExp[KEYSIZE-1:1]};
+77         1/1          			done	<=	'b0;
+78                      			//after first time
+79                      		end
+80         1/1          		else if(count == 0)
+81                      		begin
+82         1/1          			if(bothrdy == 1'b1 &&  multgo == 1'b0)
+83                      			begin
+84         1/1          				cypher 	<= 	tempout;	// set output value
+85         1/1          				done	<=	1'b1;
+86                      			end
+                        MISSING_ELSE
+87                      		end
+88         1/1          		else if(bothrdy == 1'b1)
+89                      		begin
+90         1/1          			if(multgo == 1'b0)
+91                      			begin
+92         1/1          				count <= {1'b0, count[KEYSIZE-1:1]};
+93                      			end
+                        MISSING_ELSE
+94                      		end
+                        MISSING_ELSE
+95                      	end
+96                      	
+97                      	// This process sets the input values for the squaring multitplier
+98                      	always@(posedge clk or posedge reset)
+99                      	begin
+100        1/1          		if(reset == 1'b1 )
+101                     		begin
+102        1/1          			root   <= 'b0;
+103        1/1          			modreg <= 'b0;
+104                     		end
+105        1/1          		else if(done == 1'b1 && ds == 1'b1)
+106                     		begin
+107                     			// first time through, input is sampled only once
+108        1/1          			modreg 	<= 	inMod;
+109        1/1          			root 	<= 	indata;
+110                     			//after first time, square result is fed back to multiplier
+111                     		end
+112                     		else
+113                     		begin
+114        1/1          			modreg <= modreg;
+115        1/1          			root   <= square;
+116                     		end
+117                     	end
+118                     	
+119                     	// this process enables the multipliers when it is safe to do so
+120                     	always@(posedge clk or posedge reset)
+121                     	begin
+122        1/1          		if(reset == 1'b1 )
+123        1/1          			multgo <= 1'b0;
+124        1/1          		else if(done == 1'b1 && ds == 1'b1)
+125                     			// first time through - automatically trigger first multiplier cycle
+126        1/1          			multgo <= 1'b1;
+127                     			// after first time, trigger multipliers when both operations are complete
+128        1/1          		else if(count != 0 && bothrdy == 1'b1)
+129        1/1          			multgo <= 1'b1;
+130                     			// when multipliers have been started, disable multiplier inputs
+131        1/1          		else if(multgo == 1'b1)
+132        1/1          			multgo <= 1'b0;
+                        MISSING_ELSE
+133                     	end
+134                     	
+135                     	// This process sets input values for the product multiplier
+136                     	always@(posedge clk or posedge reset)
+137                     	begin
+138        1/1          		if(reset == 1'b1)
+139                     		begin
+140        1/1          			tempin <= 'b0;
+141        1/1          			sqrin  <= 'b0;
+142                     		end
+143        1/1          		else if(done == 1'b1 && ds == 1'b1)
+144                     		begin
+145                     			// first time through, input is sampled only once
+146                     			// if the least significant bit of the exponent is '1' then we seed the
+147                     			// multiplier with the message value. Otherwise, we seed it with 1.
+148                     			// The square is set to 1, so the result of the first multiplication will be
+149                     			// either 1 or the initial message value
+150        1/1          			sqrin <= {{(KEYSIZE-1){1'b0}}, 1'b1};		
+151        1/1          			if( inExp[0] == 1'b1 ) 
+152        1/1          				tempin <= indata;
+153                     			else
+154        0/1     ==>  				tempin 	<= {{ (KEYSIZE-1){1'b0} },1'b1};
+155                     		end
+156                     		else
+157                     		begin
+158                     			// after first time, the multiplication and square results are fed back through the multiplier.
+159                     			// The counter (exponent) has been shifted one bit to the right
+160                     			// If the least significant bit of the exponent is '1' the result of the most recent
+161                     			// squaring operation is fed to the multiplier.
+162                     			// Otherwise, the square value is set to 1 to indicate no multiplication.
+163        1/1          			tempin <= tempout;
+164        1/1          			if(count[0] == 1'b1)
+165        1/1          				sqrin <= square;
+166                     			else
+167        1/1          				sqrin <= {{(KEYSIZE-1){1'b0}}, 1'b1};
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : v_ARS_RSACypher
+                Total Covered Percent 
+Totals          21    8       38.10   
+Total Bits      45076 22535   49.99   
+Total Bits 0->1 22538 11268   50.00   
+Total Bits 1->0 22538 11267   49.99   
+
+                                 
+Ports          8     3    37.50  
+Port Bits      16392 8195 49.99  
+Port Bits 0->1 8196  4097 49.99  
+Port Bits 1->0 8196  4098 50.00  
+
+                                    
+Signals          13    5     38.46  
+Signal Bits      28684 14340 49.99  
+Signal Bits 0->1 14342 7171  50.00  
+Signal Bits 1->0 14342 7169  49.99  
+
+Port Details
+                  Toggle Toggle 1->0 Toggle 0->1 Direction 
+indata[1023:0]    Yes    Yes         Yes         INPUT     
+indata[2047:1024] No     No          No          INPUT     
+inExp[0]          Yes    Yes         Yes         INPUT     
+inExp[1]          No     No          No          INPUT     
+inExp[1023:2]     Yes    Yes         Yes         INPUT     
+inExp[2047:1024]  No     No          No          INPUT     
+inMod[679:0]      Yes    Yes         Yes         INPUT     
+inMod[680]        No     No          No          INPUT     
+inMod[1023:681]   Yes    Yes         Yes         INPUT     
+inMod[2047:1024]  No     No          No          INPUT     
+cypher[1023:0]    Yes    Yes         Yes         OUTPUT    
+cypher[2047:1024] No     No          No          OUTPUT    
+clk               Yes    Yes         Yes         INPUT     
+ds                Yes    Yes         Yes         INPUT     
+reset             No     Yes         No          INPUT     
+ready             Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                   Toggle Toggle 1->0 Toggle 0->1 
+modreg[0]          No     No          Yes         
+modreg[426:1]      Yes    Yes         Yes         
+modreg[427]        No     No          Yes         
+modreg[679:428]    Yes    Yes         Yes         
+modreg[680]        No     No          No          
+modreg[1023:681]   Yes    Yes         Yes         
+modreg[2047:1024]  No     No          No          
+root[1023:0]       Yes    Yes         Yes         
+root[2047:1024]    No     No          No          
+square[1023:0]     Yes    Yes         Yes         
+square[2047:1024]  No     No          No          
+sqrin[1023:0]      Yes    Yes         Yes         
+sqrin[2047:1024]   No     No          No          
+tempin[1023:0]     Yes    Yes         Yes         
+tempin[2047:1024]  No     No          No          
+tempout[1023:0]    Yes    Yes         Yes         
+tempout[2047:1024] No     No          No          
+count[1022:0]      Yes    Yes         Yes         
+count[2047:1023]   No     No          No          
+multrdy            Yes    Yes         Yes         
+sqrrdy             Yes    Yes         Yes         
+bothrdy            Yes    Yes         Yes         
+multgo             Yes    Yes         Yes         
+sqrgo              No     No          No          
+done               Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : v_ARS_RSACypher
+         Line No. Total Covered Percent 
+Branches          20    19      95.00   
+IF       68       7     7       100.00  
+IF       100      3     3       100.00  
+IF       122      5     5       100.00  
+IF       138      5     4       80.00   
+
+
+68         		if(reset == 1'b1)
+           		-1-  
+69         		begin
+70         			count <= 'b0;
+           			==>
+71         			done  <= 'b0;
+72         		end
+73         		else if(done == 1'b1 && ds == 1'b1)
+           		     -2-  
+74         		begin
+75         			//first time through
+76         			count	<=	{1'b0,inExp[KEYSIZE-1:1]};
+           			==>
+77         			done	<=	'b0;
+78         			//after first time
+79         		end
+80         		else if(count == 0)
+           		     -3-  
+81         		begin
+82         			if(bothrdy == 1'b1 &&  multgo == 1'b0)
+           			-4-  
+83         			begin
+84         				cypher 	<= 	tempout;	// set output value
+           				==>
+85         				done	<=	1'b1;
+86         			end
+           			MISSING_ELSE
+           			==>
+87         		end
+88         		else if(bothrdy == 1'b1)
+           		     -5-  
+89         		begin
+90         			if(multgo == 1'b0)
+           			-6-  
+91         			begin
+92         				count <= {1'b0, count[KEYSIZE-1:1]};
+           				==>
+93         			end
+           			MISSING_ELSE
+           			==>
+94         		end
+           		MISSING_ELSE
+           		==>
+
+Branches:
+
+-1- -2- -3- -4- -5- -6- Status  
+1   -   -   -   -   -   Covered 
+0   1   -   -   -   -   Covered 
+0   0   1   1   -   -   Covered 
+0   0   1   0   -   -   Covered 
+0   0   0   -   1   1   Covered 
+0   0   0   -   1   0   Covered 
+0   0   0   -   0   -   Covered 
+
+
+100        		if(reset == 1'b1 )
+           		-1-  
+101        		begin
+102        			root   <= 'b0;
+           			==>
+103        			modreg <= 'b0;
+104        		end
+105        		else if(done == 1'b1 && ds == 1'b1)
+           		     -2-  
+106        		begin
+107        			// first time through, input is sampled only once
+108        			modreg 	<= 	inMod;
+           			==>
+109        			root 	<= 	indata;
+110        			//after first time, square result is fed back to multiplier
+111        		end
+112        		else
+113        		begin
+114        			modreg <= modreg;
+           			==>
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+122        		if(reset == 1'b1 )
+           		-1-  
+123        			multgo <= 1'b0;
+           			==>
+124        		else if(done == 1'b1 && ds == 1'b1)
+           		     -2-  
+125        			// first time through - automatically trigger first multiplier cycle
+126        			multgo <= 1'b1;
+           			==>
+127        			// after first time, trigger multipliers when both operations are complete
+128        		else if(count != 0 && bothrdy == 1'b1)
+           		     -3-  
+129        			multgo <= 1'b1;
+           			==>
+130        			// when multipliers have been started, disable multiplier inputs
+131        		else if(multgo == 1'b1)
+           		     -4-  
+132        			multgo <= 1'b0;
+           			==>
+           			MISSING_ELSE
+           			==>
+
+Branches:
+
+-1- -2- -3- -4- Status  
+1   -   -   -   Covered 
+0   1   -   -   Covered 
+0   0   1   -   Covered 
+0   0   0   1   Covered 
+0   0   0   0   Covered 
+
+
+138        		if(reset == 1'b1)
+           		-1-  
+139        		begin
+140        			tempin <= 'b0;
+           			==>
+141        			sqrin  <= 'b0;
+142        		end
+143        		else if(done == 1'b1 && ds == 1'b1)
+           		     -2-  
+144        		begin
+145        			// first time through, input is sampled only once
+146        			// if the least significant bit of the exponent is '1' then we seed the
+147        			// multiplier with the message value. Otherwise, we seed it with 1.
+148        			// The square is set to 1, so the result of the first multiplication will be
+149        			// either 1 or the initial message value
+150        			sqrin <= {{(KEYSIZE-1){1'b0}}, 1'b1};		
+151        			if( inExp[0] == 1'b1 ) 
+           			-3-  
+152        				tempin <= indata;
+           				==>
+153        			else
+154        				tempin 	<= {{ (KEYSIZE-1){1'b0} },1'b1};
+           				==>
+155        		end
+156        		else
+157        		begin
+158        			// after first time, the multiplication and square results are fed back through the multiplier.
+159        			// The counter (exponent) has been shifted one bit to the right
+160        			// If the least significant bit of the exponent is '1' the result of the most recent
+161        			// squaring operation is fed to the multiplier.
+162        			// Otherwise, the square value is set to 1 to indicate no multiplication.
+163        			tempin <= tempout;
+164        			if(count[0] == 1'b1)
+           			-4-  
+165        				sqrin <= square;
+           				==>
+166        			else
+167        				sqrin <= {{(KEYSIZE-1){1'b0}}, 1'b1};
+           				==>
+
+Branches:
+
+-1- -2- -3- -4- Status      
+1   -   -   -   Covered     
+0   1   1   -   Covered     
+0   1   0   -   Not Covered 
+0   0   -   1   Covered     
+0   0   -   0   Covered     
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb.modmultiply
+===============================================================================
+
+Instance :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 80.85  97.56  49.99  95.00 
+
+
+Instance's subtree :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 84.54  98.59  57.30  97.73 
+
+
+Module : 
+
+SCORE  LINE   TOGGLE BRANCH NAME            
+ 80.85  97.56  49.99  95.00 v_ARS_RSACypher 
+
+
+Parent : 
+
+SCORE  LINE   TOGGLE BRANCH NAME 
+ 87.50 100.00  75.00 --     tb   
+
+
+Subtrees :
+
+SCORE  LINE   TOGGLE BRANCH NAME        
+ 86.66 100.00  59.97 100.00 modmultiply 
+ 86.66 100.00  59.97 100.00 modsqr      
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : v_ARS_modmult
+===============================================================================
+SCORE  LINE   TOGGLE BRANCH 
+ 86.66 100.00  59.97 100.00 
+
+Source File(s) : 
+
+/home/chongyu/project/rsa_uvm/v_file/sim/../../d_file/v_ARS_modmult.v
+
+Module self-instances :
+
+SCORE  LINE   TOGGLE BRANCH NAME                       
+ 86.66 100.00  59.97 100.00 tb.modmultiply.modmultiply 
+ 86.66 100.00  59.97 100.00 tb.modmultiply.modsqr      
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : v_ARS_modmult
+
+             Line No.   Total   Covered  Percent
+TOTAL                       15       15   100.00
+ALWAYS             44       15       15   100.00
+
+43                      	begin
+44         1/1          		if(reset == 1'b1)
+45         1/1          			first <= 1'b1;
+46         1/1          		else if(first == 1'b1)
+47                      		begin
+48         1/1          			if(ds == 1'b1)
+49                      			begin
+50         1/1          				mpreg 	<= mplier;
+51         1/1          				mcreg 	<= {2'b00, mpand};
+52         1/1          				modreg1	<= {2'b00, modulus};
+53         1/1          				modreg2 <= {1'b0, modulus, 1'b0};
+54         1/1          				prodreg <= 'b0;
+55         1/1          				first 	<= 'b0;
+56                      			end	
+                        MISSING_ELSE
+57                      		end
+58         1/1          		else if(mpreg == 0)
+59         1/1                first <= 1'b1;
+60                      		else
+61                      		begin
+62         1/1          			mcreg 	<= 	{mcreg2[MPWID:0], 1'b0};
+63         1/1          			mpreg 	<= 	{1'b0, mpreg[MPWID-1:1]};
+64         1/1          			prodreg <= 	prodreg4;
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : v_ARS_modmult
+                Total Covered Percent 
+Totals          21    8       38.10   
+Total Bits      61494 36881   59.97   
+Total Bits 0->1 30747 18442   59.98   
+Total Bits 1->0 30747 18439   59.97   
+
+                                 
+Ports          8     3    37.50  
+Port Bits      16392 8195 49.99  
+Port Bits 0->1 8196  4098 50.00  
+Port Bits 1->0 8196  4097 49.99  
+
+                                    
+Signals          13    5     38.46  
+Signal Bits      45102 28686 63.60  
+Signal Bits 0->1 22551 14344 63.61  
+Signal Bits 1->0 22551 14342 63.60  
+
+Port Details
+                   Toggle Toggle 1->0 Toggle 0->1 Direction 
+mpand[1023:0]      Yes    Yes         Yes         INPUT     
+mpand[2047:1024]   No     No          No          INPUT     
+mplier[1023:0]     Yes    Yes         Yes         INPUT     
+mplier[2047:1024]  No     No          No          INPUT     
+modulus[0]         No     No          Yes         INPUT     
+modulus[426:1]     Yes    Yes         Yes         INPUT     
+modulus[427]       No     No          Yes         INPUT     
+modulus[679:428]   Yes    Yes         Yes         INPUT     
+modulus[680]       No     No          No          INPUT     
+modulus[1023:681]  Yes    Yes         Yes         INPUT     
+modulus[2047:1024] No     No          No          INPUT     
+product[1023:0]    Yes    Yes         Yes         OUTPUT    
+product[2047:1024] No     No          No          OUTPUT    
+clk                Yes    Yes         Yes         INPUT     
+ds                 Yes    Yes         Yes         INPUT     
+reset              No     Yes         No          INPUT     
+ready              Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                    Toggle Toggle 1->0 Toggle 0->1 
+mpreg[1023:0]       Yes    Yes         Yes         
+mpreg[2047:1024]    No     No          No          
+mcreg[1024:0]       Yes    Yes         Yes         
+mcreg[2049:1025]    No     No          No          
+mcreg1[2049:0]      Yes    Yes         Yes         
+mcreg2[1023:0]      Yes    Yes         Yes         
+mcreg2[2049:1024]   No     No          No          
+modreg1[0]          No     No          No          
+modreg1[426:1]      Yes    Yes         Yes         
+modreg1[427]        No     No          Yes         
+modreg1[679:428]    Yes    Yes         Yes         
+modreg1[680]        No     No          No          
+modreg1[1023:681]   Yes    Yes         Yes         
+modreg1[2049:1024]  No     No          No          
+modreg2[1:0]        No     No          No          
+modreg2[427:2]      Yes    Yes         Yes         
+modreg2[428]        No     No          Yes         
+modreg2[680:429]    Yes    Yes         Yes         
+modreg2[681]        No     No          No          
+modreg2[1024:682]   Yes    Yes         Yes         
+modreg2[2049:1025]  No     No          No          
+prodreg[1023:0]     Yes    Yes         Yes         
+prodreg[2049:1024]  No     No          No          
+prodreg1[1025:0]    Yes    Yes         Yes         
+prodreg1[2049:1026] No     No          No          
+prodreg2[2049:0]    Yes    Yes         Yes         
+prodreg3[2049:0]    Yes    Yes         Yes         
+prodreg4[1023:0]    Yes    Yes         Yes         
+prodreg4[2049:1024] No     No          No          
+first               Yes    Yes         Yes         
+modstate[1:0]       Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : v_ARS_modmult
+         Line No. Total Covered Percent 
+Branches          12    12      100.00  
+TERNARY  28       2     2       100.00  
+TERNARY  35       3     3       100.00  
+TERNARY  39       2     2       100.00  
+IF       44       5     5       100.00  
+
+
+28         	assign	prodreg1	=	mpreg[0] ? prodreg + mcreg : prodreg;
+           	      	        	 	         -1-  
+           	      	        	 	         ==>  
+           	      	        	 	         ==>  
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+35         	assign	prodreg4	=	(modstate == 2'b11) ? prodreg1 : ((modstate == 2'b10) ? prodreg2 : prodreg3);
+           	      	        	 	                    -1-                               -2-   
+           	      	        	 	                    ==>                               ==>   
+           	      	        	 	                                                      ==>  
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+39         	assign	mcreg2		=	mcreg1[MPWID] ? mcreg : mcreg1;
+           	      	      		 	              -1-  
+           	      	      		 	              ==>  
+           	      	      		 	              ==>  
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+44         		if(reset == 1'b1)
+           		-1-  
+45         			first <= 1'b1;
+           			==>
+46         		else if(first == 1'b1)
+           		     -2-  
+47         		begin
+48         			if(ds == 1'b1)
+           			-3-  
+49         			begin
+50         				mpreg 	<= mplier;
+           				==>
+51         				mcreg 	<= {2'b00, mpand};
+52         				modreg1	<= {2'b00, modulus};
+53         				modreg2 <= {1'b0, modulus, 1'b0};
+54         				prodreg <= 'b0;
+55         				first 	<= 'b0;
+56         			end	
+           			MISSING_ELSE
+           			==>
+57         		end
+58         		else if(mpreg == 0)
+           		     -4-  
+59               first <= 1'b1;
+                 ==>
+60         		else
+61         		begin
+62         			mcreg 	<= 	{mcreg2[MPWID:0], 1'b0};
+           			==>
+
+Branches:
+
+-1- -2- -3- -4- Status  
+1   -   -   -   Covered 
+0   1   1   -   Covered 
+0   1   0   -   Covered 
+0   0   -   1   Covered 
+0   0   -   0   Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb.modmultiply.modmultiply
+===============================================================================
+
+Instance :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 86.66 100.00  59.97 100.00 
+
+
+Instance's subtree :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 86.66 100.00  59.97 100.00 
+
+
+Module : 
+
+SCORE  LINE   TOGGLE BRANCH NAME          
+ 86.66 100.00  59.97 100.00 v_ARS_modmult 
+
+
+Parent : 
+
+SCORE  LINE   TOGGLE BRANCH NAME        
+ 80.85  97.56  49.99  95.00 modmultiply 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Instance : tb.modmultiply.modmultiply
+
+             Line No.   Total   Covered  Percent
+TOTAL                       15       15   100.00
+ALWAYS             44       15       15   100.00
+
+43                      	begin
+44         1/1          		if(reset == 1'b1)
+45         1/1          			first <= 1'b1;
+46         1/1          		else if(first == 1'b1)
+47                      		begin
+48         1/1          			if(ds == 1'b1)
+49                      			begin
+50         1/1          				mpreg 	<= mplier;
+51         1/1          				mcreg 	<= {2'b00, mpand};
+52         1/1          				modreg1	<= {2'b00, modulus};
+53         1/1          				modreg2 <= {1'b0, modulus, 1'b0};
+54         1/1          				prodreg <= 'b0;
+55         1/1          				first 	<= 'b0;
+56                      			end	
+                        MISSING_ELSE
+57                      		end
+58         1/1          		else if(mpreg == 0)
+59         1/1                first <= 1'b1;
+60                      		else
+61                      		begin
+62         1/1          			mcreg 	<= 	{mcreg2[MPWID:0], 1'b0};
+63         1/1          			mpreg 	<= 	{1'b0, mpreg[MPWID-1:1]};
+64         1/1          			prodreg <= 	prodreg4;
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : tb.modmultiply.modmultiply
+                Total Covered Percent 
+Totals          21    8       38.10   
+Total Bits      61494 36881   59.97   
+Total Bits 0->1 30747 18442   59.98   
+Total Bits 1->0 30747 18439   59.97   
+
+                                 
+Ports          8     3    37.50  
+Port Bits      16392 8195 49.99  
+Port Bits 0->1 8196  4098 50.00  
+Port Bits 1->0 8196  4097 49.99  
+
+                                    
+Signals          13    5     38.46  
+Signal Bits      45102 28686 63.60  
+Signal Bits 0->1 22551 14344 63.61  
+Signal Bits 1->0 22551 14342 63.60  
+
+Port Details
+                   Toggle Toggle 1->0 Toggle 0->1 Direction 
+mpand[1023:0]      Yes    Yes         Yes         INPUT     
+mpand[2047:1024]   No     No          No          INPUT     
+mplier[1023:0]     Yes    Yes         Yes         INPUT     
+mplier[2047:1024]  No     No          No          INPUT     
+modulus[0]         No     No          Yes         INPUT     
+modulus[426:1]     Yes    Yes         Yes         INPUT     
+modulus[427]       No     No          Yes         INPUT     
+modulus[679:428]   Yes    Yes         Yes         INPUT     
+modulus[680]       No     No          No          INPUT     
+modulus[1023:681]  Yes    Yes         Yes         INPUT     
+modulus[2047:1024] No     No          No          INPUT     
+product[1023:0]    Yes    Yes         Yes         OUTPUT    
+product[2047:1024] No     No          No          OUTPUT    
+clk                Yes    Yes         Yes         INPUT     
+ds                 Yes    Yes         Yes         INPUT     
+reset              No     Yes         No          INPUT     
+ready              Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                    Toggle Toggle 1->0 Toggle 0->1 
+mpreg[1023:0]       Yes    Yes         Yes         
+mpreg[2047:1024]    No     No          No          
+mcreg[1024:0]       Yes    Yes         Yes         
+mcreg[2049:1025]    No     No          No          
+mcreg1[2049:0]      Yes    Yes         Yes         
+mcreg2[1023:0]      Yes    Yes         Yes         
+mcreg2[2049:1024]   No     No          No          
+modreg1[0]          No     No          No          
+modreg1[426:1]      Yes    Yes         Yes         
+modreg1[427]        No     No          Yes         
+modreg1[679:428]    Yes    Yes         Yes         
+modreg1[680]        No     No          No          
+modreg1[1023:681]   Yes    Yes         Yes         
+modreg1[2049:1024]  No     No          No          
+modreg2[1:0]        No     No          No          
+modreg2[427:2]      Yes    Yes         Yes         
+modreg2[428]        No     No          Yes         
+modreg2[680:429]    Yes    Yes         Yes         
+modreg2[681]        No     No          No          
+modreg2[1024:682]   Yes    Yes         Yes         
+modreg2[2049:1025]  No     No          No          
+prodreg[1023:0]     Yes    Yes         Yes         
+prodreg[2049:1024]  No     No          No          
+prodreg1[1025:0]    Yes    Yes         Yes         
+prodreg1[2049:1026] No     No          No          
+prodreg2[2049:0]    Yes    Yes         Yes         
+prodreg3[2049:0]    Yes    Yes         Yes         
+prodreg4[1023:0]    Yes    Yes         Yes         
+prodreg4[2049:1024] No     No          No          
+first               Yes    Yes         Yes         
+modstate[1:0]       Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Instance : tb.modmultiply.modmultiply
+         Line No. Total Covered Percent 
+Branches          12    12      100.00  
+TERNARY  28       2     2       100.00  
+TERNARY  35       3     3       100.00  
+TERNARY  39       2     2       100.00  
+IF       44       5     5       100.00  
+
+
+28         	assign	prodreg1	=	mpreg[0] ? prodreg + mcreg : prodreg;
+           	      	        	 	         -1-  
+           	      	        	 	         ==>  
+           	      	        	 	         ==>  
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+35         	assign	prodreg4	=	(modstate == 2'b11) ? prodreg1 : ((modstate == 2'b10) ? prodreg2 : prodreg3);
+           	      	        	 	                    -1-                               -2-   
+           	      	        	 	                    ==>                               ==>   
+           	      	        	 	                                                      ==>  
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+39         	assign	mcreg2		=	mcreg1[MPWID] ? mcreg : mcreg1;
+           	      	      		 	              -1-  
+           	      	      		 	              ==>  
+           	      	      		 	              ==>  
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+44         		if(reset == 1'b1)
+           		-1-  
+45         			first <= 1'b1;
+           			==>
+46         		else if(first == 1'b1)
+           		     -2-  
+47         		begin
+48         			if(ds == 1'b1)
+           			-3-  
+49         			begin
+50         				mpreg 	<= mplier;
+           				==>
+51         				mcreg 	<= {2'b00, mpand};
+52         				modreg1	<= {2'b00, modulus};
+53         				modreg2 <= {1'b0, modulus, 1'b0};
+54         				prodreg <= 'b0;
+55         				first 	<= 'b0;
+56         			end	
+           			MISSING_ELSE
+           			==>
+57         		end
+58         		else if(mpreg == 0)
+           		     -4-  
+59               first <= 1'b1;
+                 ==>
+60         		else
+61         		begin
+62         			mcreg 	<= 	{mcreg2[MPWID:0], 1'b0};
+           			==>
+
+Branches:
+
+-1- -2- -3- -4- Status  
+1   -   -   -   Covered 
+0   1   1   -   Covered 
+0   1   0   -   Covered 
+0   0   -   1   Covered 
+0   0   -   0   Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb.modmultiply.modsqr
+===============================================================================
+
+Instance :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 86.66 100.00  59.97 100.00 
+
+
+Instance's subtree :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 86.66 100.00  59.97 100.00 
+
+
+Module : 
+
+SCORE  LINE   TOGGLE BRANCH NAME          
+ 86.66 100.00  59.97 100.00 v_ARS_modmult 
+
+
+Parent : 
+
+SCORE  LINE   TOGGLE BRANCH NAME        
+ 80.85  97.56  49.99  95.00 modmultiply 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Instance : tb.modmultiply.modsqr
+
+             Line No.   Total   Covered  Percent
+TOTAL                       15       15   100.00
+ALWAYS             44       15       15   100.00
+
+43                      	begin
+44         1/1          		if(reset == 1'b1)
+45         1/1          			first <= 1'b1;
+46         1/1          		else if(first == 1'b1)
+47                      		begin
+48         1/1          			if(ds == 1'b1)
+49                      			begin
+50         1/1          				mpreg 	<= mplier;
+51         1/1          				mcreg 	<= {2'b00, mpand};
+52         1/1          				modreg1	<= {2'b00, modulus};
+53         1/1          				modreg2 <= {1'b0, modulus, 1'b0};
+54         1/1          				prodreg <= 'b0;
+55         1/1          				first 	<= 'b0;
+56                      			end	
+                        MISSING_ELSE
+57                      		end
+58         1/1          		else if(mpreg == 0)
+59         1/1                first <= 1'b1;
+60                      		else
+61                      		begin
+62         1/1          			mcreg 	<= 	{mcreg2[MPWID:0], 1'b0};
+63         1/1          			mpreg 	<= 	{1'b0, mpreg[MPWID-1:1]};
+64         1/1          			prodreg <= 	prodreg4;
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : tb.modmultiply.modsqr
+                Total Covered Percent 
+Totals          21    8       38.10   
+Total Bits      61494 36881   59.97   
+Total Bits 0->1 30747 18442   59.98   
+Total Bits 1->0 30747 18439   59.97   
+
+                                 
+Ports          8     3    37.50  
+Port Bits      16392 8195 49.99  
+Port Bits 0->1 8196  4098 50.00  
+Port Bits 1->0 8196  4097 49.99  
+
+                                    
+Signals          13    5     38.46  
+Signal Bits      45102 28686 63.60  
+Signal Bits 0->1 22551 14344 63.61  
+Signal Bits 1->0 22551 14342 63.60  
+
+Port Details
+                   Toggle Toggle 1->0 Toggle 0->1 Direction 
+mpand[1023:0]      Yes    Yes         Yes         INPUT     
+mpand[2047:1024]   No     No          No          INPUT     
+mplier[1023:0]     Yes    Yes         Yes         INPUT     
+mplier[2047:1024]  No     No          No          INPUT     
+modulus[0]         No     No          Yes         INPUT     
+modulus[426:1]     Yes    Yes         Yes         INPUT     
+modulus[427]       No     No          Yes         INPUT     
+modulus[679:428]   Yes    Yes         Yes         INPUT     
+modulus[680]       No     No          No          INPUT     
+modulus[1023:681]  Yes    Yes         Yes         INPUT     
+modulus[2047:1024] No     No          No          INPUT     
+product[1023:0]    Yes    Yes         Yes         OUTPUT    
+product[2047:1024] No     No          No          OUTPUT    
+clk                Yes    Yes         Yes         INPUT     
+ds                 Yes    Yes         Yes         INPUT     
+reset              No     Yes         No          INPUT     
+ready              Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                    Toggle Toggle 1->0 Toggle 0->1 
+mpreg[1023:0]       Yes    Yes         Yes         
+mpreg[2047:1024]    No     No          No          
+mcreg[1024:0]       Yes    Yes         Yes         
+mcreg[2049:1025]    No     No          No          
+mcreg1[2049:0]      Yes    Yes         Yes         
+mcreg2[1023:0]      Yes    Yes         Yes         
+mcreg2[2049:1024]   No     No          No          
+modreg1[0]          No     No          No          
+modreg1[426:1]      Yes    Yes         Yes         
+modreg1[427]        No     No          Yes         
+modreg1[679:428]    Yes    Yes         Yes         
+modreg1[680]        No     No          No          
+modreg1[1023:681]   Yes    Yes         Yes         
+modreg1[2049:1024]  No     No          No          
+modreg2[1:0]        No     No          No          
+modreg2[427:2]      Yes    Yes         Yes         
+modreg2[428]        No     No          Yes         
+modreg2[680:429]    Yes    Yes         Yes         
+modreg2[681]        No     No          No          
+modreg2[1024:682]   Yes    Yes         Yes         
+modreg2[2049:1025]  No     No          No          
+prodreg[1023:0]     Yes    Yes         Yes         
+prodreg[2049:1024]  No     No          No          
+prodreg1[1025:0]    Yes    Yes         Yes         
+prodreg1[2049:1026] No     No          No          
+prodreg2[2049:0]    Yes    Yes         Yes         
+prodreg3[2049:0]    Yes    Yes         Yes         
+prodreg4[1023:0]    Yes    Yes         Yes         
+prodreg4[2049:1024] No     No          No          
+first               Yes    Yes         Yes         
+modstate[1:0]       Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Instance : tb.modmultiply.modsqr
+         Line No. Total Covered Percent 
+Branches          12    12      100.00  
+TERNARY  28       2     2       100.00  
+TERNARY  35       3     3       100.00  
+TERNARY  39       2     2       100.00  
+IF       44       5     5       100.00  
+
+
+28         	assign	prodreg1	=	mpreg[0] ? prodreg + mcreg : prodreg;
+           	      	        	 	         -1-  
+           	      	        	 	         ==>  
+           	      	        	 	         ==>  
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+35         	assign	prodreg4	=	(modstate == 2'b11) ? prodreg1 : ((modstate == 2'b10) ? prodreg2 : prodreg3);
+           	      	        	 	                    -1-                               -2-   
+           	      	        	 	                    ==>                               ==>   
+           	      	        	 	                                                      ==>  
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+39         	assign	mcreg2		=	mcreg1[MPWID] ? mcreg : mcreg1;
+           	      	      		 	              -1-  
+           	      	      		 	              ==>  
+           	      	      		 	              ==>  
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+44         		if(reset == 1'b1)
+           		-1-  
+45         			first <= 1'b1;
+           			==>
+46         		else if(first == 1'b1)
+           		     -2-  
+47         		begin
+48         			if(ds == 1'b1)
+           			-3-  
+49         			begin
+50         				mpreg 	<= mplier;
+           				==>
+51         				mcreg 	<= {2'b00, mpand};
+52         				modreg1	<= {2'b00, modulus};
+53         				modreg2 <= {1'b0, modulus, 1'b0};
+54         				prodreg <= 'b0;
+55         				first 	<= 'b0;
+56         			end	
+           			MISSING_ELSE
+           			==>
+57         		end
+58         		else if(mpreg == 0)
+           		     -4-  
+59               first <= 1'b1;
+                 ==>
+60         		else
+61         		begin
+62         			mcreg 	<= 	{mcreg2[MPWID:0], 1'b0};
+           			==>
+
+Branches:
+
+-1- -2- -3- -4- Status  
+1   -   -   -   Covered 
+0   1   1   -   Covered 
+0   1   0   -   Covered 
+0   0   -   1   Covered 
+0   0   -   0   Covered 
+
+
+===============================================================================
+Module : tb
+===============================================================================
+SCORE  LINE   TOGGLE BRANCH 
+ 87.50 100.00  75.00 --     
+
+Source File(s) : 
+
+/home/chongyu/project/rsa_uvm/v_file/sim/../tb.sv
+
+Module self-instances :
+
+SCORE  LINE   TOGGLE BRANCH NAME 
+ 87.50 100.00  75.00 --     tb   
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : tb
+
+             Line No.   Total   Covered  Percent
+TOTAL                       13       13   100.00
+INITIAL            29        4        4   100.00
+INITIAL            39        6        6   100.00
+INITIAL            53        3        3   100.00
+
+28                      	begin 
+29         1/1          		clk <= 0;
+30         1/1          		forever
+31                      		begin
+32         2/2          			#5 clk <= !clk;
+33                      		end
+34                      	end
+35                      
+36                        // reset trigger
+37                      	initial
+38                      	begin 
+39         2/2          		#5 reset <= 1;
+40         3/3          		repeat(10) @(posedge clk);
+                        REPEAT_FALSE
+41         1/1          		reset <= 0;
+42                      	end
+43                      
+44                      	import	rsa_pkg::*;
+45                      	import 	uvm_pkg::*;
+46                      
+47                      	rsa_intf intf(.*);
+48                      	
+49                      	//uvm_config
+50                      	//set the virtual interface in env
+51                      	initial
+52                      	begin
+53         1/1          		uvm_config_db#(virtual rsa_intf)::set(uvm_root::get(), "uvm_test_top.env.agt", "vif", intf);
+54         1/1          		uvm_config_db#(virtual rsa_intf)::set(uvm_root::get(), "uvm_test_top.env.virt_sqr", "vif", intf);
+55         1/1          		run_test("access_test");
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : tb
+                Total Covered Percent 
+Totals          2     1       50.00   
+Total Bits      4     3       75.00   
+Total Bits 0->1 2     1       50.00   
+Total Bits 1->0 2     2       100.00  
+
+                            
+Signals          2 1 50.00  
+Signal Bits      4 3 75.00  
+Signal Bits 0->1 2 1 50.00  
+Signal Bits 1->0 2 2 100.00 
+
+Signal Details
+      Toggle Toggle 1->0 Toggle 0->1 
+clk   Yes    Yes         Yes         
+reset No     Yes         No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb
+===============================================================================
+
+Instance :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 87.50 100.00  75.00 --     
+
+
+Instance's subtree :
+
+SCORE  LINE   TOGGLE BRANCH 
+ 84.40  98.81  56.65  97.73 
+
+
+Module : 
+
+SCORE  LINE   TOGGLE BRANCH NAME 
+ 87.50 100.00  75.00 --     tb   
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+SCORE  LINE   TOGGLE BRANCH NAME        
+ 49.99 --      49.99 --     intf        
+ 84.54  98.59  57.30  97.73 modmultiply 
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.

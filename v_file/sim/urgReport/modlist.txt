@@ -1,0 +1,16 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  LINE   TOGGLE BRANCH 
+ 72.79  82.42  54.99  80.95 
+
+
+Total modules in report: 5
+-------------------------------------------------------------------------------
+SCORE  LINE   TOGGLE BRANCH NAME                         
+ 30.91  31.82 --      30.00 uvm_custom_install_recording 
+ 49.99 --      49.99 --     rsa_intf                     
+ 80.85  97.56  49.99  95.00 v_ARS_RSACypher              
+ 86.66 100.00  59.97 100.00 v_ARS_modmult                
+ 87.50 100.00  75.00 --     tb                           
+

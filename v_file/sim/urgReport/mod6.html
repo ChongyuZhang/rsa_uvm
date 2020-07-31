@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: v_ARS_RSACypher</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_v_ARS_RSACypher'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_v_ARS_RSACypher')">v_ARS_RSACypher</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>TOGGLE</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 80.85</td>
+<td class="s9 cl rt"><a href="mod6.html#Line" > 97.56</a></td>
+<td class="s4 cl rt"><a href="mod6.html#Toggle" > 49.99</a></td>
+<td class="s9 cl rt"><a href="mod6.html#Branch" > 95.00</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/chongyu/project/rsa_uvm/v_file/sim/../../d_file/v_ARS_RSACypher.v')">/home/chongyu/project/rsa_uvm/v_file/sim/../../d_file/v_ARS_RSACypher.v</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>TOGGLE</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod6.html#inst_tag_7"  onclick="showContent('inst_tag_7')">tb.modmultiply</a></td>
+<td class="s8 cl rt"> 80.85</td>
+<td class="s9 cl rt"><a href="mod6.html#Line" > 97.56</a></td>
+<td class="s4 cl rt"><a href="mod6.html#Toggle" > 49.99</a></td>
+<td class="s9 cl rt"><a href="mod6.html#Branch" > 95.00</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_v_ARS_RSACypher'>
+<hr>
+<a name="inst_tag_7"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_7" >tb.modmultiply</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>TOGGLE</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 80.85</td>
+<td class="s9 cl rt"><a href="mod6.html#Line" > 97.56</a></td>
+<td class="s4 cl rt"><a href="mod6.html#Toggle" > 49.99</a></td>
+<td class="s9 cl rt"><a href="mod6.html#Branch" > 95.00</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>TOGGLE</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 84.54</td>
+<td class="s9 cl rt"> 98.59</td>
+<td class="s5 cl rt"> 57.30</td>
+<td class="s9 cl rt"> 97.73</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>TOGGLE</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s8 cl rt"> 87.50</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s7 cl rt"> 75.00</td>
+<td class="wht cl rt"></td>
+<td><a href="mod8.html#inst_tag_9" >tb</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>TOGGLE</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod3.html#inst_tag_3" id="tag_urg_inst_3">modmultiply</a></td>
+<td class="s8 cl rt"> 86.66</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s5 cl rt"> 59.97</td>
+<td class="s10 cl rt">100.00</td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod3.html#inst_tag_4" id="tag_urg_inst_4">modsqr</a></td>
+<td class="s8 cl rt"> 86.66</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s5 cl rt"> 59.97</td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_v_ARS_RSACypher'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod6.html" >v_ARS_RSACypher</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">TOTAL</td><td></td><td>41</td><td>40</td><td>97.56</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>68</td><td>13</td><td>13</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>100</td><td>8</td><td>8</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>122</td><td>8</td><td>8</td><td>100.00</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>138</td><td>12</td><td>11</td><td>91.67</td></tr>
+</table>
+<pre class="code"><br clear=all>
+67                      	begin
+68         1/1          		if(reset == 1'b1)
+69                      		begin
+70         1/1          			count &lt;= 'b0;
+71         1/1          			done  &lt;= 'b0;
+72                      		end
+73         1/1          		else if(done == 1'b1 &amp;&amp; ds == 1'b1)
+74                      		begin
+75                      			//first time through
+76         1/1          			count	&lt;=	{1'b0,inExp[KEYSIZE-1:1]};
+77         1/1          			done	&lt;=	'b0;
+78                      			//after first time
+79                      		end
+80         1/1          		else if(count == 0)
+81                      		begin
+82         1/1          			if(bothrdy == 1'b1 &amp;&amp;  multgo == 1'b0)
+83                      			begin
+84         1/1          				cypher 	&lt;= 	tempout;	// set output value
+85         1/1          				done	&lt;=	1'b1;
+86                      			end
+                        MISSING_ELSE
+87                      		end
+88         1/1          		else if(bothrdy == 1'b1)
+89                      		begin
+90         1/1          			if(multgo == 1'b0)
+91                      			begin
+92         1/1          				count &lt;= {1'b0, count[KEYSIZE-1:1]};
+93                      			end
+                        MISSING_ELSE
+94                      		end
+                        MISSING_ELSE
+95                      	end
+96                      	
+97                      	// This process sets the input values for the squaring multitplier
+98                      	always@(posedge clk or posedge reset)
+99                      	begin
+100        1/1          		if(reset == 1'b1 )
+101                     		begin
+102        1/1          			root   &lt;= 'b0;
+103        1/1          			modreg &lt;= 'b0;
+104                     		end
+105        1/1          		else if(done == 1'b1 &amp;&amp; ds == 1'b1)
+106                     		begin
+107                     			// first time through, input is sampled only once
+108        1/1          			modreg 	&lt;= 	inMod;
+109        1/1          			root 	&lt;= 	indata;
+110                     			//after first time, square result is fed back to multiplier
+111                     		end
+112                     		else
+113                     		begin
+114        1/1          			modreg &lt;= modreg;
+115        1/1          			root   &lt;= square;
+116                     		end
+117                     	end
+118                     	
+119                     	// this process enables the multipliers when it is safe to do so
+120                     	always@(posedge clk or posedge reset)
+121                     	begin
+122        1/1          		if(reset == 1'b1 )
+123        1/1          			multgo &lt;= 1'b0;
+124        1/1          		else if(done == 1'b1 &amp;&amp; ds == 1'b1)
+125                     			// first time through - automatically trigger first multiplier cycle
+126        1/1          			multgo &lt;= 1'b1;
+127                     			// after first time, trigger multipliers when both operations are complete
+128        1/1          		else if(count != 0 &amp;&amp; bothrdy == 1'b1)
+129        1/1          			multgo &lt;= 1'b1;
+130                     			// when multipliers have been started, disable multiplier inputs
+131        1/1          		else if(multgo == 1'b1)
+132        1/1          			multgo &lt;= 1'b0;
+                        MISSING_ELSE
+133                     	end
+134                     	
+135                     	// This process sets input values for the product multiplier
+136                     	always@(posedge clk or posedge reset)
+137                     	begin
+138        1/1          		if(reset == 1'b1)
+139                     		begin
+140        1/1          			tempin &lt;= 'b0;
+141        1/1          			sqrin  &lt;= 'b0;
+142                     		end
+143        1/1          		else if(done == 1'b1 &amp;&amp; ds == 1'b1)
+144                     		begin
+145                     			// first time through, input is sampled only once
+146                     			// if the least significant bit of the exponent is '1' then we seed the
+147                     			// multiplier with the message value. Otherwise, we seed it with 1.
+148                     			// The square is set to 1, so the result of the first multiplication will be
+149                     			// either 1 or the initial message value
+150        1/1          			sqrin &lt;= {{(KEYSIZE-1){1'b0}}, 1'b1};		
+151        1/1          			if( inExp[0] == 1'b1 ) 
+152        1/1          				tempin &lt;= indata;
+153                     			else
+154        <font color = "red">0/1     ==>  				tempin 	&lt;= {{ (KEYSIZE-1){1'b0} },1'b1};</font>
+155                     		end
+156                     		else
+157                     		begin
+158                     			// after first time, the multiplication and square results are fed back through the multiplier.
+159                     			// The counter (exponent) has been shifted one bit to the right
+160                     			// If the least significant bit of the exponent is '1' the result of the most recent
+161                     			// squaring operation is fed to the multiplier.
+162                     			// Otherwise, the square value is set to 1 to indicate no multiplication.
+163        1/1          			tempin &lt;= tempout;
+164        1/1          			if(count[0] == 1'b1)
+165        1/1          				sqrin &lt;= square;
+166                     			else
+167        1/1          				sqrin &lt;= {{(KEYSIZE-1){1'b0}}, 1'b1};
+</pre>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod6.html" >v_ARS_RSACypher</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s3">
+<td>Totals</td>
+<td class="rt">21</td>
+<td class="rt">8</td>
+<td class="rt">38.10 </td>
+</tr><tr class="s4">
+<td>Total Bits</td>
+<td class="rt">45076</td>
+<td class="rt">22535</td>
+<td class="rt">49.99 </td>
+</tr><tr class="s4">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">22538</td>
+<td class="rt">11268</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s4">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">22538</td>
+<td class="rt">11267</td>
+<td class="rt">49.99 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s3">
+<td>Ports</td>
+<td class="rt">8</td>
+<td class="rt">3</td>
+<td class="rt">37.50 </td>
+</tr><tr class="s4">
+<td>Port Bits</td>
+<td class="rt">16392</td>
+<td class="rt">8195</td>
+<td class="rt">49.99 </td>
+</tr><tr class="s4">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">8196</td>
+<td class="rt">4097</td>
+<td class="rt">49.99 </td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">8196</td>
+<td class="rt">4098</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s3">
+<td>Signals</td>
+<td class="rt">13</td>
+<td class="rt">5</td>
+<td class="rt">38.46 </td>
+</tr><tr class="s4">
+<td>Signal Bits</td>
+<td class="rt">28684</td>
+<td class="rt">14340</td>
+<td class="rt">49.99 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">14342</td>
+<td class="rt">7171</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s4">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">14342</td>
+<td class="rt">7169</td>
+<td class="rt">49.99 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>indata[1023:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>indata[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>inExp[0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>inExp[1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>inExp[1023:2]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>inExp[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>inMod[679:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>inMod[680]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>inMod[1023:681]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>inMod[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>cypher[1023:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>cypher[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>ds</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>reset</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>ready</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>modreg[0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>modreg[426:1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>modreg[427]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>modreg[679:428]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>modreg[680]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>modreg[1023:681]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>modreg[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>root[1023:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>root[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>square[1023:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>square[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>sqrin[1023:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sqrin[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>tempin[1023:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tempin[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>tempout[1023:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tempout[2047:1024]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>count[1022:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>count[2047:1023]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>multrdy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sqrrdy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>bothrdy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>multgo</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sqrgo</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>done</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod6.html" >v_ARS_RSACypher</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Branches</td>
+<td></td>
+<td class="rt">20</td>
+<td class="rt">19</td>
+<td class="rt">95.00 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">68</td>
+<td class="rt">7</td>
+<td class="rt">7</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">100</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">122</td>
+<td class="rt">5</td>
+<td class="rt">5</td>
+<td class="rt">100.00</td>
+</tr><tr class="s8">
+<td>IF</td>
+<td class="rt">138</td>
+<td class="rt">5</td>
+<td class="rt">4</td>
+<td class="rt">80.00 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+68         		if(reset == 1'b1)
+           		<font color = "green">-1-</font>  
+69         		begin
+70         			count <= 'b0;
+           <font color = "green">			==></font>
+71         			done  <= 'b0;
+72         		end
+73         		else if(done == 1'b1 && ds == 1'b1)
+           		     <font color = "green">-2-</font>  
+74         		begin
+75         			//first time through
+76         			count	<=	{1'b0,inExp[KEYSIZE-1:1]};
+           <font color = "green">			==></font>
+77         			done	<=	'b0;
+78         			//after first time
+79         		end
+80         		else if(count == 0)
+           		     <font color = "green">-3-</font>  
+81         		begin
+82         			if(bothrdy == 1'b1 &&  multgo == 1'b0)
+           			<font color = "green">-4-</font>  
+83         			begin
+84         				cypher 	<= 	tempout;	// set output value
+           <font color = "green">				==></font>
+85         				done	<=	1'b1;
+86         			end
+           			MISSING_ELSE
+           <font color = "green">			==></font>
+87         		end
+88         		else if(bothrdy == 1'b1)
+           		     <font color = "green">-5-</font>  
+89         		begin
+90         			if(multgo == 1'b0)
+           			<font color = "green">-6-</font>  
+91         			begin
+92         				count <= {1'b0, count[KEYSIZE-1:1]};
+           <font color = "green">				==></font>
+93         			end
+           			MISSING_ELSE
+           <font color = "green">			==></font>
+94         		end
+           		MISSING_ELSE
+           <font color = "green">		==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+100        		if(reset == 1'b1 )
+           		<font color = "green">-1-</font>  
+101        		begin
+102        			root   <= 'b0;
+           <font color = "green">			==></font>
+103        			modreg <= 'b0;
+104        		end
+105        		else if(done == 1'b1 && ds == 1'b1)
+           		     <font color = "green">-2-</font>  
+106        		begin
+107        			// first time through, input is sampled only once
+108        			modreg 	<= 	inMod;
+           <font color = "green">			==></font>
+109        			root 	<= 	indata;
+110        			//after first time, square result is fed back to multiplier
+111        		end
+112        		else
+113        		begin
+114        			modreg <= modreg;
+           <font color = "green">			==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+122        		if(reset == 1'b1 )
+           		<font color = "green">-1-</font>  
+123        			multgo <= 1'b0;
+           <font color = "green">			==></font>
+124        		else if(done == 1'b1 && ds == 1'b1)
+           		     <font color = "green">-2-</font>  
+125        			// first time through - automatically trigger first multiplier cycle
+126        			multgo <= 1'b1;
+           <font color = "green">			==></font>
+127        			// after first time, trigger multipliers when both operations are complete
+128        		else if(count != 0 && bothrdy == 1'b1)
+           		     <font color = "green">-3-</font>  
+129        			multgo <= 1'b1;
+           <font color = "green">			==></font>
+130        			// when multipliers have been started, disable multiplier inputs
+131        		else if(multgo == 1'b1)
+           		     <font color = "green">-4-</font>  
+132        			multgo <= 1'b0;
+           <font color = "green">			==></font>
+           			MISSING_ELSE
+           <font color = "green">			==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+138        		if(reset == 1'b1)
+           		<font color = "green">-1-</font>  
+139        		begin
+140        			tempin <= 'b0;
+           <font color = "green">			==></font>
+141        			sqrin  <= 'b0;
+142        		end
+143        		else if(done == 1'b1 && ds == 1'b1)
+           		     <font color = "green">-2-</font>  
+144        		begin
+145        			// first time through, input is sampled only once
+146        			// if the least significant bit of the exponent is '1' then we seed the
+147        			// multiplier with the message value. Otherwise, we seed it with 1.
+148        			// The square is set to 1, so the result of the first multiplication will be
+149        			// either 1 or the initial message value
+150        			sqrin <= {{(KEYSIZE-1){1'b0}}, 1'b1};		
+151        			if( inExp[0] == 1'b1 ) 
+           			<font color = "red">-3-</font>  
+152        				tempin <= indata;
+           <font color = "green">				==></font>
+153        			else
+154        				tempin 	<= {{ (KEYSIZE-1){1'b0} },1'b1};
+           <font color = "red">				==></font>
+155        		end
+156        		else
+157        		begin
+158        			// after first time, the multiplication and square results are fed back through the multiplier.
+159        			// The counter (exponent) has been shifted one bit to the right
+160        			// If the least significant bit of the exponent is '1' the result of the most recent
+161        			// squaring operation is fed to the multiplier.
+162        			// Otherwise, the square value is set to 1 to indicate no multiplication.
+163        			tempin <= tempout;
+164        			if(count[0] == 1'b1)
+           			<font color = "green">-4-</font>  
+165        				sqrin <= square;
+           <font color = "green">				==></font>
+166        			else
+167        				sqrin <= {{(KEYSIZE-1){1'b0}}, 1'b1};
+           <font color = "green">				==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_7">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_v_ARS_RSACypher">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

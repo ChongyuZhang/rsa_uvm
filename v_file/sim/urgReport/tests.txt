@@ -1,0 +1,12 @@
+Tests
+
+Total Coverage Summary 
+SCORE  LINE   TOGGLE BRANCH 
+ 75.58  84.91  56.65  85.19 
+
+
+Total tests in report: 1
+-------------------------------------------------------------------------------
+Data from the following tests was used to generate this report
+tb.simv/tb_1 
+

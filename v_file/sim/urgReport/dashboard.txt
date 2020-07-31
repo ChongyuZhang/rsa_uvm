@@ -1,0 +1,28 @@
+Dashboard
+
+Date: Thu Jul 30 20:16:38 2020
+
+User: chongyu
+
+Version: O-2018.09-SP2
+Command line: urg -full64 -format both -dir tb.simv.vdb
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   TOGGLE BRANCH 
+ 75.58  84.91  56.65  85.19 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   TOGGLE BRANCH NAME                         
+ 84.40  98.81  56.65  97.73 tb                           
+ 30.91  31.82 --      30.00 uvm_custom_install_recording 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   TOGGLE BRANCH 
+ 72.79  82.42  54.99  80.95 
+

@@ -1,0 +1,14 @@
+  CREATE_STREAM @0 {NAME:rsa_encrypt_2048b_sequence T:Transactions SCOPE:uvm_test_top.env.virt_sqr STREAM:798}
+  CREATE_STREAM @195 {NAME:rsa_encrypt_2048b_sequence T:Transactions SCOPE:uvm_test_top.env.agt.sequencer STREAM:848}
+  CREATE_STREAM @0 {NAME:rsa_decrypt_2048b_sequence T:Transactions SCOPE:uvm_test_top.env.virt_sqr STREAM:798}
+  CREATE_STREAM @195 {NAME:rsa_decrypt_2048b_sequence T:Transactions SCOPE:uvm_test_top.env.agt.sequencer STREAM:848}
+  CREATE_STREAM @0 {NAME:rsa_encrypt_2048b_sequence T:Transactions SCOPE:uvm_test_top.env.virt_sqr STREAM:798}
+  CREATE_STREAM @195 {NAME:rsa_encrypt_2048b_sequence T:Transactions SCOPE:uvm_test_top.env.agt.sequencer STREAM:848}
+  CREATE_STREAM @0 {NAME:rsa_encrypt_1024b_sequence T:Transactions SCOPE:uvm_test_top.env.virt_sqr STREAM:798}
+  CREATE_STREAM @195 {NAME:rsa_encrypt_1024b_sequence T:Transactions SCOPE:uvm_test_top.env.agt.sequencer STREAM:848}
+  CREATE_STREAM @0 {NAME:rsa_decrypt_1024b_sequence T:Transactions SCOPE:uvm_test_top.env.virt_sqr STREAM:798}
+  CREATE_STREAM @195 {NAME:rsa_decrypt_1024b_sequence T:Transactions SCOPE:uvm_test_top.env.agt.sequencer STREAM:848}
+  CREATE_STREAM @0 {NAME:rsa_txt_2048b_sequence T:Transactions SCOPE:uvm_test_top.env.virt_sqr STREAM:798}
+  CREATE_STREAM @195 {NAME:rsa_txt_2048b_sequence T:Transactions SCOPE:uvm_test_top.env.agt.sequencer STREAM:848}
+  CREATE_STREAM @0 {NAME:rsa_txt_1024b_sequence T:Transactions SCOPE:uvm_test_top.env.virt_sqr STREAM:798}
+  CREATE_STREAM @195 {NAME:rsa_txt_1024b_sequence T:Transactions SCOPE:uvm_test_top.env.agt.sequencer STREAM:848}

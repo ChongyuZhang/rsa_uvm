@@ -1,0 +1,37 @@
+
+VLOGAN	= vlogan
+VLOGAN_OPT	= -l comp.log +incdir+../ +incdir+../seq_and_test/ -full64 -ntb_opts uvm-1.2 +incdir+/opt/synopsys/vcs/O-2018.09-SP2/etc/uvm/vcs/wrap +incdir+/opt/synopsys/vcs/O-2018.09-SP2/etc/uvm-1.2 -sverilog -timescale=1ns/1ns +incdir+../../d_file -sverilog +define+UVM_DIRECTC_OPTS -full64
+
+all :		_VCSgd_yVdrCe_1.db \
+	_VCSgd_R4kEp_1.db \
+	_VCSgd_ByaFW_1.db \
+	_VCSgd_0ZRE2c_1.db \
+	_VCSgd_g5tw6d_1.db \
+	_VCSgd_TuRBPc_1.db \
+
+
+
+_VCSgd_yVdrCe_1.db :	../rsa_pkg.sv 
+		${VLOGAN}  ${VLOGAN_OPT} ../rsa_pkg.sv
+
+
+_VCSgd_R4kEp_1.db :	/opt/synopsys/vcs/O-2018.09-SP2/etc/uvm-1.2/uvm_pkg.sv 
+		${VLOGAN}  ${VLOGAN_OPT} /opt/synopsys/vcs/O-2018.09-SP2/etc/uvm-1.2/uvm_pkg.sv
+
+
+_VCSgd_ByaFW_1.db :	../../d_file/v_ARS_modmult.v 
+		${VLOGAN}  ${VLOGAN_OPT} ../../d_file/v_ARS_modmult.v
+
+
+_VCSgd_0ZRE2c_1.db :	../../d_file/v_ARS_RSACypher.v 
+		${VLOGAN}  ${VLOGAN_OPT} ../../d_file/v_ARS_RSACypher.v
+
+
+_VCSgd_g5tw6d_1.db :	../rsa_intf.sv 
+		${VLOGAN}  ${VLOGAN_OPT} ../rsa_intf.sv
+
+
+_VCSgd_TuRBPc_1.db :	../tb.sv 
+		${VLOGAN}  ${VLOGAN_OPT} ../tb.sv
+
+

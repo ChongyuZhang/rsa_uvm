@@ -1,0 +1,28 @@
+<session version="1.1" release="O-2018.09-SP2" timestp="2020-07-30 12:14:27 GMT">
+  <info>
+    <attr name="datetime" value="Thu Jul 30 20:16:38 2020
+"/>
+    <attr name="command" value="urg -full64 -format both -dir tb.simv.vdb"/>
+    <attr name="top_instance" value="uvm_custom_install_recording,tb"/>
+  </info>
+  <hvp>
+    <datadef>
+      <metdef name="Line" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Toggle" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Branch" type="ratio" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Line" value="90/106" />
+    <metric name="Toggle" value="104495/184460" />
+    <metric name="Branch" value="46/54" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+  </scope>
+  <scope type="assert" name="Statistics">
+  </scope>
+  </old_coverage>
+</session>

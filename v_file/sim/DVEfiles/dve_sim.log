@@ -1,0 +1,552 @@
+18:41:34    16 -->                                                             [tcl] ucliGUI::connect -toolargs -ucligui -toolexe tb.simv -a run.log -cm line+tgl+branch -cm_name tb_1 +ntb_random_seed=1 +UVM_TESTNAME=rsa_txt_1024b_test -pid 25371 -toolin /tmp/vcs_20200730104131_25368_chongyu..stdin -toolout /tmp/vcs_20200730104131_25368_chongyu..stdout  
+18:41:34    17 -->                                                                 [tcl] set ucliGUI::state
+18:41:34    18 -->                                                                     [tcl] set dveMisc::dve_log_file 1
+18:41:34    19 -->                                                                         [tcl] gui_update_simulator_buttons
+18:41:35    20 -->                                                                             [tcl] set ucliGUI::state
+18:41:35    21 -->                                                                                 [tcl] ucliCore::getToolPID
+18:41:35    22 -->                                                                                     [tcl] synopsys::env hasTB
+18:41:35    23 -->                                                                                         [tcl] trigger_hier_stack_context_switch 0
+18:41:35    24 -->                                                                                             [tcl] synopsys::xml set_array_limit <data limit="50" />
+18:41:35    25 --> ...  [tcl] synopsys::xml set_depth_limit <data limit="100" />
+18:41:35    26 --> ...      [tcl] synopsys::xml set_string_limit <data limit="1000" />
+18:41:35    27 --> ...          [tcl] synopsys::xml set_only_active_frame <data value="1" />
+18:41:35    28 --> ...              [tcl] synopsys::xml set_variable_frame_id <data value="1" />
+18:41:35    29 --> ...                  [tcl] synUtils::setDVEInitPhase 1
+18:41:35    30 --> ...                      [tcl] gui_get_env SIMSETUP::SIMVPD
+18:41:35    31 --> ...                          [tcl] synopsys::dump -type VPD -file /home/chongyu/project/rsa_uvm/v_file/sim/inter.vpd -locking
+18:41:35    32 --> ...                              [tcl] synopsys::dump -autoflush on -fid VPD0
+18:41:35    33 --> ...                                  [tcl] set ::dve_fid VPD0
+18:41:35    34 --> ...                                      [tcl] synUtils::setDVEInitPhase 0
+18:41:35    35 --> ...                                          [tcl] ucliCore::getToolPID
+18:41:35    36 --> ...                                              [tcl] synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpsf3MhJ
+18:41:35    37 --> ...                                                  [tcl] synUtils::sendTool -active {_icl_start_rpc -version "O-2018.09-SP2_Full64" -sync_file /tmp/vcs_dve_rpc.chongyu.25371}
+18:41:35    38 --> ...                                                      [tcl] synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.chongyu.25371}
+18:41:35    39 --> ...                                                          [tcl] dveMisc::vbusExpand tb
+18:41:35    40 --> ...                                                              [tcl] config endofsim noexit
+18:41:35    41 --> ...                                                                  [tcl] config onfail enable all
+18:41:35    42 --> ...                                                                      [tcl] config syscaddplainmembers
+18:41:35    43 --> ...                                                                          [tcl] config syscaddsourcenames
+18:41:35    44 --> ...                                                                              [tcl] config syscaddstructtypes
+18:41:35    45 --> ...                                                                                  [tcl] synopsys::listing -disable
+18:42:00    46 --> ...                                                                                      [tcl] synopsys::run
+18:42:00    47 --> ...                                                                                          [tcl] set ucliGUI::state
+18:42:00    48 --> ...                                                                                              [tcl] gui_update_simulator_buttons
+18:42:00    49 --> ...                                                                                                  [tcl] set ucliGUI::state
+18:42:00    50 --> ...  [tcl] gui_update_simulator_buttons
+18:42:03    51 --> ...      [tcl] set synopsys::env(time) 398835
+18:42:06    52 --> ...          [tcl] set synopsys::env(time) 714345
+18:42:09    53 --> ...              [tcl] set synopsys::env(time) 995655
+18:42:12    54 --> ...                  [tcl] set synopsys::env(time) 1314915
+18:42:15    55 --> ...                      [tcl] set synopsys::env(time) 1641425
+18:42:18    56 --> ...                          [tcl] set synopsys::env(time) 1997765
+18:42:21    57 --> ...                              [tcl] set synopsys::env(time) 2322445
+18:42:24    58 --> ...                                  [tcl] set synopsys::env(time) 2630995
+18:42:27    59 --> ...                                      [tcl] set synopsys::env(time) 2971985
+18:42:30    60 --> ...                                          [tcl] set synopsys::env(time) 3279115
+18:42:33    61 --> ...                                              [tcl] set synopsys::env(time) 3568975
+18:42:36    62 --> ...                                                  [tcl] set synopsys::env(time) 3877605
+18:42:39    63 --> ...                                                      [tcl] set synopsys::env(time) 4201855
+18:42:42    64 --> ...                                                          [tcl] set synopsys::env(time) 4501015
+18:42:45    65 --> ...                                                              [tcl] set synopsys::env(time) 4809275
+18:42:48    66 --> ...                                                                  [tcl] set synopsys::env(time) 5110525
+18:42:51    67 --> ...                                                                      [tcl] set synopsys::env(time) 5412535
+18:42:54    68 --> ...                                                                          [tcl] set synopsys::env(time) 5722485
+18:42:57    69 --> ...                                                                              [tcl] set synopsys::env(time) 6054455
+18:43:00    70 --> ...                                                                                  [tcl] set synopsys::env(time) 6360525
+18:43:03    71 --> ...                                                                                      [tcl] set synopsys::env(time) 6663905
+18:43:06    72 --> ...                                                                                          [tcl] set synopsys::env(time) 6999175
+18:43:09    73 --> ...                                                                                              [tcl] set synopsys::env(time) 7365085
+18:43:12    74 --> ...                                                                                                  [tcl] set synopsys::env(time) 7681825
+18:43:15    75 --> ...  [tcl] set synopsys::env(time) 8037665
+18:43:18    76 --> ...      [tcl] set synopsys::env(time) 8330275
+18:43:21    77 --> ...          [tcl] set synopsys::env(time) 8615035
+18:43:24    78 --> ...              [tcl] set synopsys::env(time) 8938135
+18:43:27    79 --> ...                  [tcl] set synopsys::env(time) 9242835
+18:43:30    80 --> ...                      [tcl] set synopsys::env(time) 9573765
+18:43:33    81 --> ...                          [tcl] set synopsys::env(time) 9883555
+18:43:36    82 --> ...                              [tcl] set synopsys::env(time) 10185455
+18:43:39    83 --> ...                                  [tcl] set synopsys::env(time) 10511610
+18:43:42    84 --> ...                                      [tcl] set synopsys::env(time) 10890735
+18:43:45    85 --> ...                                          [tcl] set synopsys::env(time) 11172225
+18:43:48    86 --> ...                                              [tcl] set synopsys::env(time) 11492915
+18:43:51    87 --> ...                                                  [tcl] set synopsys::env(time) 11817935
+18:43:54    88 --> ...                                                      [tcl] set synopsys::env(time) 12118765
+18:43:57    89 --> ...                                                          [tcl] set synopsys::env(time) 12399465
+18:44:00    90 --> ...                                                              [tcl] set synopsys::env(time) 12714805
+18:44:03    91 --> ...                                                                  [tcl] set synopsys::env(time) 13020775
+18:44:06    92 --> ...                                                                      [tcl] set synopsys::env(time) 13318855
+18:44:09    93 --> ...                                                                          [tcl] set synopsys::env(time) 13642595
+18:44:12    94 --> ...                                                                              [tcl] set synopsys::env(time) 13972105
+18:44:15    95 --> ...                                                                                  [tcl] set synopsys::env(time) 14312465
+18:44:18    96 --> ...                                                                                      [tcl] set synopsys::env(time) 14669065
+18:44:21    97 --> ...                                                                                          [tcl] set synopsys::env(time) 14962765
+18:44:24    98 --> ...                                                                                              [tcl] set synopsys::env(time) 15247575
+18:44:27    99 --> ...                                                                                                  [tcl] set synopsys::env(time) 15550965
+18:44:30    100 --> ...  [tcl] set synopsys::env(time) 15876985
+18:44:33    101 --> ...      [tcl] set synopsys::env(time) 16189565
+18:44:36    102 --> ...          [tcl] set synopsys::env(time) 16510505
+18:44:39    103 --> ...              [tcl] set synopsys::env(time) 16841675
+18:44:42    104 --> ...                  [tcl] set synopsys::env(time) 17136415
+18:44:45    105 --> ...                      [tcl] set synopsys::env(time) 17441625
+18:44:48    106 --> ...                          [tcl] set synopsys::env(time) 17738035
+18:44:51    107 --> ...                              [tcl] set synopsys::env(time) 18045315
+18:44:54    108 --> ...                                  [tcl] set synopsys::env(time) 18363935
+18:44:57    109 --> ...                                      [tcl] set synopsys::env(time) 18688355
+18:45:00    110 --> ...                                          [tcl] set synopsys::env(time) 18990045
+18:45:03    111 --> ...                                              [tcl] set synopsys::env(time) 19283315
+18:45:06    112 --> ...                                                  [tcl] set synopsys::env(time) 19576405
+18:45:09    113 --> ...                                                      [tcl] set synopsys::env(time) 19895595
+18:45:12    114 --> ...                                                          [tcl] set synopsys::env(time) 20235685
+18:45:15    115 --> ...                                                              [tcl] set synopsys::env(time) 20542335
+18:45:18    116 --> ...                                                                  [tcl] set synopsys::env(time) 20843045
+18:45:21    117 --> ...                                                                      [tcl] set synopsys::env(time) 21144865
+18:45:24    118 --> ...                                                                          [tcl] set synopsys::env(time) 21506095
+18:45:27    119 --> ...                                                                              [tcl] set synopsys::env(time) 21839065
+18:45:30    120 --> ...                                                                                  [tcl] set synopsys::env(time) 22179415
+18:45:33    121 --> ...                                                                                      [tcl] set synopsys::env(time) 22495785
+18:45:36    122 --> ...                                                                                          [tcl] set synopsys::env(time) 22828745
+18:45:39    123 --> ...                                                                                              [tcl] set synopsys::env(time) 23146375
+18:45:42    124 --> ...                                                                                                  [tcl] set synopsys::env(time) 23502875
+18:45:45    125 --> ...  [tcl] set synopsys::env(time) 23797375
+18:45:48    126 --> ...      [tcl] set synopsys::env(time) 24103915
+18:45:51    127 --> ...          [tcl] set synopsys::env(time) 24410865
+18:45:54    128 --> ...              [tcl] set synopsys::env(time) 24709755
+18:45:57    129 --> ...                  [tcl] set synopsys::env(time) 25000925
+18:46:00    130 --> ...                      [tcl] set synopsys::env(time) 25302605
+18:46:03    131 --> ...                          [tcl] set synopsys::env(time) 25597185
+18:46:06    132 --> ...                              [tcl] set synopsys::env(time) 25897435
+18:46:09    133 --> ...                                  [tcl] set synopsys::env(time) 26225935
+18:46:12    134 --> ...                                      [tcl] set synopsys::env(time) 26558095
+18:46:15    135 --> ...                                          [tcl] set synopsys::env(time) 26851095
+18:46:18    136 --> ...                                              [tcl] set synopsys::env(time) 27173655
+18:46:21    137 --> ...                                                  [tcl] set synopsys::env(time) 27487705
+18:46:24    138 --> ...                                                      [tcl] set synopsys::env(time) 27788095
+18:46:27    139 --> ...                                                          [tcl] set synopsys::env(time) 28110765
+18:46:30    140 --> ...                                                              [tcl] set synopsys::env(time) 28429965
+18:46:33    141 --> ...                                                                  [tcl] set synopsys::env(time) 28754725
+18:46:36    142 --> ...                                                                      [tcl] set synopsys::env(time) 29072865
+18:46:39    143 --> ...                                                                          [tcl] set synopsys::env(time) 29399805
+18:46:42    144 --> ...                                                                              [tcl] set synopsys::env(time) 29702095
+18:46:45    145 --> ...                                                                                  [tcl] set synopsys::env(time) 30065255
+18:46:48    146 --> ...                                                                                      [tcl] set synopsys::env(time) 30374265
+18:46:51    147 --> ...                                                                                          [tcl] set synopsys::env(time) 30695345
+18:46:54    148 --> ...                                                                                              [tcl] set synopsys::env(time) 31051635
+18:46:57    149 --> ...                                                                                                  [tcl] set synopsys::env(time) 31371545
+18:47:00    150 --> ...  [tcl] set synopsys::env(time) 31655075
+18:47:03    151 --> ...      [tcl] set synopsys::env(time) 31991325
+18:47:06    152 --> ...          [tcl] set synopsys::env(time) 32353275
+18:47:09    153 --> ...              [tcl] set synopsys::env(time) 32730725
+18:47:12    154 --> ...                  [tcl] set synopsys::env(time) 33021775
+18:47:15    155 --> ...                      [tcl] set synopsys::env(time) 33283485
+18:47:18    156 --> ...                          [tcl] set synopsys::env(time) 33603275
+18:47:21    157 --> ...                              [tcl] set synopsys::env(time) 33961455
+18:47:24    158 --> ...                                  [tcl] set synopsys::env(time) 34252275
+18:47:27    159 --> ...                                      [tcl] set synopsys::env(time) 34583715
+18:47:30    160 --> ...                                          [tcl] set synopsys::env(time) 34929115
+18:47:33    161 --> ...                                              [tcl] set synopsys::env(time) 35255865
+18:47:36    162 --> ...                                                  [tcl] set synopsys::env(time) 35554825
+18:47:39    163 --> ...                                                      [tcl] set synopsys::env(time) 35859415
+18:47:42    164 --> ...                                                          [tcl] set synopsys::env(time) 36164865
+18:47:45    165 --> ...                                                              [tcl] set synopsys::env(time) 36473395
+18:47:48    166 --> ...                                                                  [tcl] set synopsys::env(time) 36787325
+18:47:51    167 --> ...                                                                      [tcl] set synopsys::env(time) 37118505
+18:47:54    168 --> ...                                                                          [tcl] set synopsys::env(time) 37465295
+18:47:57    169 --> ...                                                                              [tcl] set synopsys::env(time) 37801905
+18:48:00    170 --> ...                                                                                  [tcl] set synopsys::env(time) 38144655
+18:48:03    171 --> ...                                                                                      [tcl] set synopsys::env(time) 38493705
+18:48:06    172 --> ...                                                                                          [tcl] set synopsys::env(time) 38835695
+18:48:09    173 --> ...                                                                                              [tcl] set synopsys::env(time) 39177605
+18:48:12    174 --> ...                                                                                                  [tcl] set synopsys::env(time) 39501085
+18:48:15    175 --> ...  [tcl] set synopsys::env(time) 39832205
+18:48:18    176 --> ...      [tcl] set synopsys::env(time) 40177225
+18:48:21    177 --> ...          [tcl] set synopsys::env(time) 40497775
+18:48:24    178 --> ...              [tcl] set synopsys::env(time) 40772225
+18:48:27    179 --> ...                  [tcl] set synopsys::env(time) 41052985
+18:48:30    180 --> ...                      [tcl] set synopsys::env(time) 41370585
+18:48:33    181 --> ...                          [tcl] set synopsys::env(time) 41681065
+18:48:36    182 --> ...                              [tcl] set synopsys::env(time) 41990505
+18:48:39    183 --> ...                                  [tcl] set synopsys::env(time) 42344515
+18:48:42    184 --> ...                                      [tcl] set synopsys::env(time) 42665605
+18:48:45    185 --> ...                                          [tcl] set synopsys::env(time) 43048825
+18:48:48    186 --> ...                                              [tcl] set synopsys::env(time) 43339205
+18:48:51    187 --> ...                                                  [tcl] set synopsys::env(time) 43637125
+18:48:54    188 --> ...                                                      [tcl] set synopsys::env(time) 43925185
+18:48:57    189 --> ...                                                          [tcl] set synopsys::env(time) 44236385
+18:49:00    190 --> ...                                                              [tcl] set synopsys::env(time) 44517535
+18:49:03    191 --> ...                                                                  [tcl] set synopsys::env(time) 44795445
+18:49:06    192 --> ...                                                                      [tcl] set synopsys::env(time) 45103565
+18:49:09    193 --> ...                                                                          [tcl] set synopsys::env(time) 45389125
+18:49:12    194 --> ...                                                                              [tcl] set synopsys::env(time) 45686895
+18:49:15    195 --> ...                                                                                  [tcl] set synopsys::env(time) 46000105
+18:49:18    196 --> ...                                                                                      [tcl] set synopsys::env(time) 46293175
+18:49:21    197 --> ...                                                                                          [tcl] set synopsys::env(time) 46579035
+18:49:24    198 --> ...                                                                                              [tcl] set synopsys::env(time) 46890785
+18:49:27    199 --> ...                                                                                                  [tcl] set synopsys::env(time) 47218985
+18:49:30    200 --> ...  [tcl] set synopsys::env(time) 47543455
+18:49:33    201 --> ...      [tcl] set synopsys::env(time) 47872225
+18:49:36    202 --> ...          [tcl] set synopsys::env(time) 48174855
+18:49:39    203 --> ...              [tcl] set synopsys::env(time) 48511295
+18:49:42    204 --> ...                  [tcl] set synopsys::env(time) 48821525
+18:49:45    205 --> ...                      [tcl] set synopsys::env(time) 49141985
+18:49:48    206 --> ...                          [tcl] set synopsys::env(time) 49506615
+18:49:51    207 --> ...                              [tcl] set synopsys::env(time) 49874725
+18:49:54    208 --> ...                                  [tcl] set synopsys::env(time) 50169515
+18:49:57    209 --> ...                                      [tcl] set synopsys::env(time) 50483815
+18:50:00    210 --> ...                                          [tcl] set synopsys::env(time) 50799315
+18:50:03    211 --> ...                                              [tcl] set synopsys::env(time) 51095885
+18:50:06    212 --> ...                                                  [tcl] set synopsys::env(time) 51430575
+18:50:09    213 --> ...                                                      [tcl] set synopsys::env(time) 51798875
+18:50:12    214 --> ...                                                          [tcl] set synopsys::env(time) 52100555
+18:50:15    215 --> ...                                                              [tcl] set synopsys::env(time) 52433945
+18:50:18    216 --> ...                                                                  [tcl] set synopsys::env(time) 52715255
+18:50:21    217 --> ...                                                                      [tcl] set synopsys::env(time) 53024175
+18:50:24    218 --> ...                                                                          [tcl] set synopsys::env(time) 53408465
+18:50:27    219 --> ...                                                                              [tcl] set synopsys::env(time) 53737025
+18:50:30    220 --> ...                                                                                  [tcl] set synopsys::env(time) 54055625
+18:50:33    221 --> ...                                                                                      [tcl] set synopsys::env(time) 54366255
+18:50:36    222 --> ...                                                                                          [tcl] set synopsys::env(time) 54671215
+18:50:39    223 --> ...                                                                                              [tcl] set synopsys::env(time) 54983745
+18:50:42    224 --> ...                                                                                                  [tcl] set synopsys::env(time) 55305525
+18:50:45    225 --> ...  [tcl] set synopsys::env(time) 55633165
+18:50:48    226 --> ...      [tcl] set synopsys::env(time) 55956045
+18:50:51    227 --> ...          [tcl] set synopsys::env(time) 56278295
+18:50:54    228 --> ...              [tcl] set synopsys::env(time) 56624115
+18:50:57    229 --> ...                  [tcl] set synopsys::env(time) 56936495
+18:51:00    230 --> ...                      [tcl] set synopsys::env(time) 57241575
+18:51:03    231 --> ...                          [tcl] set synopsys::env(time) 57550335
+18:51:06    232 --> ...                              [tcl] set synopsys::env(time) 57886685
+18:51:09    233 --> ...                                  [tcl] set synopsys::env(time) 58210955
+18:51:12    234 --> ...                                      [tcl] set synopsys::env(time) 58514535
+18:51:15    235 --> ...                                          [tcl] set synopsys::env(time) 58820105
+18:51:18    236 --> ...                                              [tcl] set synopsys::env(time) 59126045
+18:51:21    237 --> ...                                                  [tcl] set synopsys::env(time) 59444525
+18:51:24    238 --> ...                                                      [tcl] set synopsys::env(time) 59755275
+18:51:27    239 --> ...                                                          [tcl] set synopsys::env(time) 60099125
+18:51:30    240 --> ...                                                              [tcl] set synopsys::env(time) 60399685
+18:51:33    241 --> ...                                                                  [tcl] set synopsys::env(time) 60753785
+18:51:36    242 --> ...                                                                      [tcl] set synopsys::env(time) 61111195
+18:51:39    243 --> ...                                                                          [tcl] set synopsys::env(time) 61422445
+18:51:42    244 --> ...                                                                              [tcl] set synopsys::env(time) 61745435
+18:51:45    245 --> ...                                                                                  [tcl] set synopsys::env(time) 62068995
+18:51:48    246 --> ...                                                                                      [tcl] set synopsys::env(time) 62391405
+18:51:51    247 --> ...                                                                                          [tcl] set synopsys::env(time) 62726355
+18:51:54    248 --> ...                                                                                              [tcl] set synopsys::env(time) 63055755
+18:51:57    249 --> ...                                                                                                  [tcl] set synopsys::env(time) 63364495
+18:52:00    250 --> ...  [tcl] set synopsys::env(time) 63689475
+18:52:03    251 --> ...      [tcl] set synopsys::env(time) 64062295
+18:52:06    252 --> ...          [tcl] set synopsys::env(time) 64413675
+18:52:09    253 --> ...              [tcl] set synopsys::env(time) 64732805
+18:52:12    254 --> ...                  [tcl] set synopsys::env(time) 65073065
+18:52:15    255 --> ...                      [tcl] set synopsys::env(time) 65381515
+18:52:18    256 --> ...                          [tcl] set synopsys::env(time) 65695215
+18:52:21    257 --> ...                              [tcl] set synopsys::env(time) 66025805
+18:52:24    258 --> ...                                  [tcl] set synopsys::env(time) 66344565
+18:52:27    259 --> ...                                      [tcl] set synopsys::env(time) 66672765
+18:52:30    260 --> ...                                          [tcl] set synopsys::env(time) 66993745
+18:52:33    261 --> ...                                              [tcl] set synopsys::env(time) 67337875
+18:52:36    262 --> ...                                                  [tcl] set synopsys::env(time) 67656935
+18:52:39    263 --> ...                                                      [tcl] set synopsys::env(time) 67978535
+18:52:42    264 --> ...                                                          [tcl] set synopsys::env(time) 68348565
+18:52:45    265 --> ...                                                              [tcl] set synopsys::env(time) 68676355
+18:52:48    266 --> ...                                                                  [tcl] set synopsys::env(time) 68989655
+18:52:51    267 --> ...                                                                      [tcl] set synopsys::env(time) 69292715
+18:52:54    268 --> ...                                                                          [tcl] set synopsys::env(time) 69558065
+18:52:57    269 --> ...                                                                              [tcl] set synopsys::env(time) 69914965
+18:53:00    270 --> ...                                                                                  [tcl] set synopsys::env(time) 70246815
+18:53:03    271 --> ...                                                                                      [tcl] set synopsys::env(time) 70552195
+18:53:06    272 --> ...                                                                                          [tcl] set synopsys::env(time) 70892445
+18:53:09    273 --> ...                                                                                              [tcl] set synopsys::env(time) 71167945
+18:53:12    274 --> ...                                                                                                  [tcl] set synopsys::env(time) 71462705
+18:53:15    275 --> ...  [tcl] set synopsys::env(time) 71769265
+18:53:18    276 --> ...      [tcl] set synopsys::env(time) 72077965
+18:53:21    277 --> ...          [tcl] set synopsys::env(time) 72376765
+18:53:24    278 --> ...              [tcl] set synopsys::env(time) 72692255
+18:53:27    279 --> ...                  [tcl] set synopsys::env(time) 73000075
+18:53:30    280 --> ...                      [tcl] set synopsys::env(time) 73307425
+18:53:33    281 --> ...                          [tcl] set synopsys::env(time) 73620805
+18:53:36    282 --> ...                              [tcl] set synopsys::env(time) 73913055
+18:53:39    283 --> ...                                  [tcl] set synopsys::env(time) 74248935
+18:53:42    284 --> ...                                      [tcl] set synopsys::env(time) 74561485
+18:53:45    285 --> ...                                          [tcl] set synopsys::env(time) 74938395
+18:53:48    286 --> ...                                              [tcl] set synopsys::env(time) 75250135
+18:53:51    287 --> ...                                                  [tcl] set synopsys::env(time) 75600925
+18:53:54    288 --> ...                                                      [tcl] set synopsys::env(time) 75882375
+18:53:57    289 --> ...                                                          [tcl] set synopsys::env(time) 76203875
+18:54:00    290 --> ...                                                              [tcl] set synopsys::env(time) 76538665
+18:54:03    291 --> ...                                                                  [tcl] set synopsys::env(time) 76857285
+18:54:06    292 --> ...                                                                      [tcl] set synopsys::env(time) 77181035
+18:54:09    293 --> ...                                                                          [tcl] set synopsys::env(time) 77494465
+18:54:12    294 --> ...                                                                              [tcl] set synopsys::env(time) 77797215
+18:54:15    295 --> ...                                                                                  [tcl] set synopsys::env(time) 78114025
+18:54:18    296 --> ...                                                                                      [tcl] set synopsys::env(time) 78435375
+18:54:21    297 --> ...                                                                                          [tcl] set synopsys::env(time) 78756205
+18:54:24    298 --> ...                                                                                              [tcl] set synopsys::env(time) 79059735
+18:54:27    299 --> ...                                                                                                  [tcl] set synopsys::env(time) 79401205
+18:54:30    300 --> ...  [tcl] set synopsys::env(time) 79695095
+18:54:33    301 --> ...      [tcl] set synopsys::env(time) 80008295
+18:54:36    302 --> ...          [tcl] set synopsys::env(time) 80323305
+18:54:39    303 --> ...              [tcl] set synopsys::env(time) 80668525
+18:54:42    304 --> ...                  [tcl] set synopsys::env(time) 80951425
+18:54:45    305 --> ...                      [tcl] set synopsys::env(time) 81252395
+18:54:48    306 --> ...                          [tcl] set synopsys::env(time) 81568375
+18:54:51    307 --> ...                              [tcl] set synopsys::env(time) 81879255
+18:54:54    308 --> ...                                  [tcl] set synopsys::env(time) 82235835
+18:54:57    309 --> ...                                      [tcl] set synopsys::env(time) 82555955
+18:55:00    310 --> ...                                          [tcl] set synopsys::env(time) 82864205
+18:55:03    311 --> ...                                              [tcl] set synopsys::env(time) 83205305
+18:55:06    312 --> ...                                                  [tcl] set synopsys::env(time) 83513725
+18:55:09    313 --> ...                                                      [tcl] set synopsys::env(time) 83831285
+18:55:12    314 --> ...                                                          [tcl] set synopsys::env(time) 84138415
+18:55:15    315 --> ...                                                              [tcl] set synopsys::env(time) 84421315
+18:55:18    316 --> ...                                                                  [tcl] set synopsys::env(time) 84735945
+18:55:21    317 --> ...                                                                      [tcl] set synopsys::env(time) 85029645
+18:55:24    318 --> ...                                                                          [tcl] set synopsys::env(time) 85372945
+18:55:27    319 --> ...                                                                              [tcl] set synopsys::env(time) 85707405
+18:55:30    320 --> ...                                                                                  [tcl] set synopsys::env(time) 86035095
+18:55:33    321 --> ...                                                                                      [tcl] set synopsys::env(time) 86343745
+18:55:36    322 --> ...                                                                                          [tcl] set synopsys::env(time) 86661785
+18:55:39    323 --> ...                                                                                              [tcl] set synopsys::env(time) 86958115
+18:55:42    324 --> ...                                                                                                  [tcl] set synopsys::env(time) 87298695
+18:55:45    325 --> ...  [tcl] set synopsys::env(time) 87628295
+18:55:48    326 --> ...      [tcl] set synopsys::env(time) 87948265
+18:55:51    327 --> ...          [tcl] set synopsys::env(time) 88267795
+18:55:54    328 --> ...              [tcl] set synopsys::env(time) 88551205
+18:55:57    329 --> ...                  [tcl] set synopsys::env(time) 88873985
+18:56:00    330 --> ...                      [tcl] set synopsys::env(time) 89214965
+18:56:03    331 --> ...                          [tcl] set synopsys::env(time) 89537905
+18:56:06    332 --> ...                              [tcl] set synopsys::env(time) 89851895
+18:56:09    333 --> ...                                  [tcl] set synopsys::env(time) 90157475
+18:56:12    334 --> ...                                      [tcl] set synopsys::env(time) 90468815
+18:56:15    335 --> ...                                          [tcl] set synopsys::env(time) 90805775
+18:56:18    336 --> ...                                              [tcl] set synopsys::env(time) 91137285
+18:56:21    337 --> ...                                                  [tcl] set synopsys::env(time) 91462475
+18:56:24    338 --> ...                                                      [tcl] set synopsys::env(time) 91804635
+18:56:27    339 --> ...                                                          [tcl] set synopsys::env(time) 92102345
+18:56:30    340 --> ...                                                              [tcl] set synopsys::env(time) 92417105
+18:56:33    341 --> ...                                                                  [tcl] set synopsys::env(time) 92736405
+18:56:36    342 --> ...                                                                      [tcl] set synopsys::env(time) 93041735
+18:56:39    343 --> ...                                                                          [tcl] set synopsys::env(time) 93372855
+18:56:42    344 --> ...                                                                              [tcl] set synopsys::env(time) 93716565
+18:56:45    345 --> ...                                                                                  [tcl] set synopsys::env(time) 94043905
+18:56:48    346 --> ...                                                                                      [tcl] set synopsys::env(time) 94379975
+18:56:51    347 --> ...                                                                                          [tcl] set synopsys::env(time) 94675005
+18:56:54    348 --> ...                                                                                              [tcl] set synopsys::env(time) 94997015
+18:56:57    349 --> ...                                                                                                  [tcl] set synopsys::env(time) 95350705
+18:57:00    350 --> ...  [tcl] set synopsys::env(time) 95644355
+18:57:03    351 --> ...      [tcl] set synopsys::env(time) 96004495
+18:57:06    352 --> ...          [tcl] set synopsys::env(time) 96379305
+18:57:09    353 --> ...              [tcl] set synopsys::env(time) 96708695
+18:57:12    354 --> ...                  [tcl] set synopsys::env(time) 97038275
+18:57:15    355 --> ...                      [tcl] set synopsys::env(time) 97341805
+18:57:18    356 --> ...                          [tcl] set synopsys::env(time) 97658805
+18:57:21    357 --> ...                              [tcl] set synopsys::env(time) 98031445
+18:57:24    358 --> ...                                  [tcl] set synopsys::env(time) 98372145
+18:57:27    359 --> ...                                      [tcl] set synopsys::env(time) 98703745
+18:57:30    360 --> ...                                          [tcl] set synopsys::env(time) 99016065
+18:57:33    361 --> ...                                              [tcl] set synopsys::env(time) 99312425
+18:57:36    362 --> ...                                                  [tcl] set synopsys::env(time) 99626975
+18:57:39    363 --> ...                                                      [tcl] set synopsys::env(time) 99933515
+18:57:42    364 --> ...                                                          [tcl] set synopsys::env(time) 100242895
+18:57:45    365 --> ...                                                              [tcl] set synopsys::env(time) 100573625
+18:57:48    366 --> ...                                                                  [tcl] set synopsys::env(time) 100890655
+18:57:51    367 --> ...                                                                      [tcl] set synopsys::env(time) 101213665
+18:57:54    368 --> ...                                                                          [tcl] set synopsys::env(time) 101513405
+18:57:57    369 --> ...                                                                              [tcl] set synopsys::env(time) 101834165
+18:58:00    370 --> ...                                                                                  [tcl] set synopsys::env(time) 102162085
+18:58:03    371 --> ...                                                                                      [tcl] set synopsys::env(time) 102480535
+18:58:06    372 --> ...                                                                                          [tcl] set synopsys::env(time) 102802255
+18:58:09    373 --> ...                                                                                              [tcl] set synopsys::env(time) 103120985
+18:58:12    374 --> ...                                                                                                  [tcl] set synopsys::env(time) 103457965
+18:58:15    375 --> ...  [tcl] set synopsys::env(time) 103763745
+18:58:18    376 --> ...      [tcl] set synopsys::env(time) 104096485
+18:58:21    377 --> ...          [tcl] set synopsys::env(time) 104380165
+18:58:24    378 --> ...              [tcl] set synopsys::env(time) 104672035
+18:58:27    379 --> ...                  [tcl] set synopsys::env(time) 104983405
+18:58:30    380 --> ...                      [tcl] set synopsys::env(time) 105338785
+18:58:33    381 --> ...                          [tcl] set synopsys::env(time) 105641435
+18:58:36    382 --> ...                              [tcl] set synopsys::env(time) 105966695
+18:58:39    383 --> ...                                  [tcl] set synopsys::env(time) 106270405
+18:58:42    384 --> ...                                      [tcl] set synopsys::env(time) 106589155
+18:58:45    385 --> ...                                          [tcl] set synopsys::env(time) 106949705
+18:58:48    386 --> ...                                              [tcl] set synopsys::env(time) 107295385
+18:58:51    387 --> ...                                                  [tcl] set synopsys::env(time) 107613535
+18:58:54    388 --> ...                                                      [tcl] set synopsys::env(time) 107923445
+18:58:57    389 --> ...                                                          [tcl] set synopsys::env(time) 108248365
+18:59:00    390 --> ...                                                              [tcl] set synopsys::env(time) 108558245
+18:59:03    391 --> ...                                                                  [tcl] set synopsys::env(time) 108898385
+18:59:06    392 --> ...                                                                      [tcl] set synopsys::env(time) 109216685
+18:59:09    393 --> ...                                                                          [tcl] set synopsys::env(time) 109536575
+18:59:12    394 --> ...                                                                              [tcl] set synopsys::env(time) 109862535
+18:59:15    395 --> ...                                                                                  [tcl] set synopsys::env(time) 110192495
+18:59:18    396 --> ...                                                                                      [tcl] set synopsys::env(time) 110487235
+18:59:21    397 --> ...                                                                                          [tcl] set synopsys::env(time) 110816605
+18:59:24    398 --> ...                                                                                              [tcl] set synopsys::env(time) 111135925
+18:59:27    399 --> ...                                                                                                  [tcl] set synopsys::env(time) 111428425
+18:59:30    400 --> ...  [tcl] set synopsys::env(time) 111739155
+18:59:33    401 --> ...      [tcl] set synopsys::env(time) 112100665
+18:59:36    402 --> ...          [tcl] set synopsys::env(time) 112420145
+18:59:39    403 --> ...              [tcl] set synopsys::env(time) 112750005
+18:59:42    404 --> ...                  [tcl] set synopsys::env(time) 113092570
+18:59:45    405 --> ...                      [tcl] set synopsys::env(time) 113412175
+18:59:48    406 --> ...                          [tcl] set synopsys::env(time) 113752915
+18:59:51    407 --> ...                              [tcl] set synopsys::env(time) 114061115
+18:59:54    408 --> ...                                  [tcl] set synopsys::env(time) 114378675
+18:59:57    409 --> ...                                      [tcl] set synopsys::env(time) 114714255
+19:00:00    410 --> ...                                          [tcl] set synopsys::env(time) 115020040
+19:00:03    411 --> ...                                              [tcl] set synopsys::env(time) 115323325
+19:00:06    412 --> ...                                                  [tcl] set synopsys::env(time) 115652635
+19:00:09    413 --> ...                                                      [tcl] set synopsys::env(time) 115968545
+19:00:12    414 --> ...                                                          [tcl] set synopsys::env(time) 116291095
+19:00:15    415 --> ...                                                              [tcl] set synopsys::env(time) 116635755
+19:00:18    416 --> ...                                                                  [tcl] set synopsys::env(time) 116941625
+19:00:21    417 --> ...                                                                      [tcl] set synopsys::env(time) 117250575
+19:00:24    418 --> ...                                                                          [tcl] set synopsys::env(time) 117620475
+19:00:27    419 --> ...                                                                              [tcl] set synopsys::env(time) 117924175
+19:00:30    420 --> ...                                                                                  [tcl] set synopsys::env(time) 118288685
+19:00:33    421 --> ...                                                                                      [tcl] set synopsys::env(time) 118604775
+19:00:36    422 --> ...                                                                                          [tcl] set synopsys::env(time) 118929195
+19:00:39    423 --> ...                                                                                              [tcl] set synopsys::env(time) 119236725
+19:00:42    424 --> ...                                                                                                  [tcl] set synopsys::env(time) 119546555
+19:00:45    425 --> ...  [tcl] set synopsys::env(time) 119856275
+19:00:48    426 --> ...      [tcl] set synopsys::env(time) 120159255
+19:00:51    427 --> ...          [tcl] set synopsys::env(time) 120480955
+19:00:54    428 --> ...              [tcl] set synopsys::env(time) 120801235
+19:00:57    429 --> ...                  [tcl] set synopsys::env(time) 121080855
+19:01:00    430 --> ...                      [tcl] set synopsys::env(time) 121365545
+19:01:03    431 --> ...                          [tcl] set synopsys::env(time) 121683845
+19:01:06    432 --> ...                              [tcl] set synopsys::env(time) 122027465
+19:01:09    433 --> ...                                  [tcl] set synopsys::env(time) 122339615
+19:01:12    434 --> ...                                      [tcl] set synopsys::env(time) 122633975
+19:01:15    435 --> ...                                          [tcl] set synopsys::env(time) 122961105
+19:01:18    436 --> ...                                              [tcl] set synopsys::env(time) 123267595
+19:01:21    437 --> ...                                                  [tcl] set synopsys::env(time) 123582345
+19:01:24    438 --> ...                                                      [tcl] set synopsys::env(time) 123898525
+19:01:27    439 --> ...                                                          [tcl] set synopsys::env(time) 124228785
+19:01:30    440 --> ...                                                              [tcl] set synopsys::env(time) 124543265
+19:01:33    441 --> ...                                                                  [tcl] set synopsys::env(time) 124856855
+19:01:36    442 --> ...                                                                      [tcl] set synopsys::env(time) 125172695
+19:01:39    443 --> ...                                                                          [tcl] set synopsys::env(time) 125509585
+19:01:42    444 --> ...                                                                              [tcl] set synopsys::env(time) 125830105
+19:01:45    445 --> ...                                                                                  [tcl] set synopsys::env(time) 126126675
+19:01:48    446 --> ...                                                                                      [tcl] set synopsys::env(time) 126440345
+19:01:51    447 --> ...                                                                                          [tcl] set synopsys::env(time) 126775605
+19:01:54    448 --> ...                                                                                              [tcl] set synopsys::env(time) 127068475
+19:01:57    449 --> ...                                                                                                  [tcl] set synopsys::env(time) 127355505
+19:02:00    450 --> ...  [tcl] set synopsys::env(time) 127690905
+19:02:03    451 --> ...      [tcl] set synopsys::env(time) 128012235
+19:02:06    452 --> ...          [tcl] set synopsys::env(time) 128368695
+19:02:09    453 --> ...              [tcl] set synopsys::env(time) 128701405
+19:02:12    454 --> ...                  [tcl] set synopsys::env(time) 129017415
+19:02:15    455 --> ...                      [tcl] set synopsys::env(time) 129352965
+19:02:18    456 --> ...                          [tcl] set synopsys::env(time) 129664715
+19:02:21    457 --> ...                              [tcl] set synopsys::env(time) 129987385
+19:02:24    458 --> ...                                  [tcl] set synopsys::env(time) 130316115
+19:02:27    459 --> ...                                      [tcl] set synopsys::env(time) 130626035
+19:02:30    460 --> ...                                          [tcl] set synopsys::env(time) 130945015
+19:02:33    461 --> ...                                              [tcl] set synopsys::env(time) 131262045
+19:02:36    462 --> ...                                                  [tcl] set synopsys::env(time) 131564055
+19:02:39    463 --> ...                                                      [tcl] set synopsys::env(time) 131859175
+19:02:42    464 --> ...                                                          [tcl] set synopsys::env(time) 132162015
+19:02:45    465 --> ...                                                              [tcl] set synopsys::env(time) 132508085
+19:02:48    466 --> ...                                                                  [tcl] set synopsys::env(time) 132854505
+19:02:51    467 --> ...                                                                      [tcl] set synopsys::env(time) 133179005
+19:02:54    468 --> ...                                                                          [tcl] set synopsys::env(time) 133530455
+19:02:57    469 --> ...                                                                              [tcl] set synopsys::env(time) 133875075
+19:03:00    470 --> ...                                                                                  [tcl] set synopsys::env(time) 134231895
+19:03:03    471 --> ...                                                                                      [tcl] set synopsys::env(time) 134560495
+19:03:06    472 --> ...                                                                                          [tcl] set synopsys::env(time) 134925745
+19:03:09    473 --> ...                                                                                              [tcl] set synopsys::env(time) 135252275
+19:03:12    474 --> ...                                                                                                  [tcl] set synopsys::env(time) 135534405
+19:03:15    475 --> ...  [tcl] set synopsys::env(time) 135885845
+19:03:18    476 --> ...      [tcl] set synopsys::env(time) 136220555
+19:03:21    477 --> ...          [tcl] set synopsys::env(time) 136505635
+19:03:24    478 --> ...              [tcl] set synopsys::env(time) 136808915
+19:03:27    479 --> ...                  [tcl] set synopsys::env(time) 137131575
+19:03:30    480 --> ...                      [tcl] set synopsys::env(time) 137440915
+19:03:33    481 --> ...                          [tcl] set synopsys::env(time) 137749115
+19:03:36    482 --> ...                              [tcl] set synopsys::env(time) 138020635
+19:03:39    483 --> ...                                  [tcl] set synopsys::env(time) 138320025
+19:03:42    484 --> ...                                      [tcl] set synopsys::env(time) 138729675
+19:03:45    485 --> ...                                          [tcl] set synopsys::env(time) 139033925
+19:03:48    486 --> ...                                              [tcl] set synopsys::env(time) 139380085
+19:03:51    487 --> ...                                                  [tcl] set synopsys::env(time) 139702165
+19:03:54    488 --> ...                                                      [tcl] set synopsys::env(time) 139988655
+19:03:57    489 --> ...                                                          [tcl] set synopsys::env(time) 140333935
+19:04:00    490 --> ...                                                              [tcl] set synopsys::env(time) 140652065
+19:04:03    491 --> ...                                                                  [tcl] set synopsys::env(time) 140931085
+19:04:06    492 --> ...                                                                      [tcl] set synopsys::env(time) 141244195
+19:04:09    493 --> ...                                                                          [tcl] set synopsys::env(time) 141586415
+19:04:12    494 --> ...                                                                              [tcl] set synopsys::env(time) 141916835
+19:04:15    495 --> ...                                                                                  [tcl] set synopsys::env(time) 142277515
+19:04:18    496 --> ...                                                                                      [tcl] set synopsys::env(time) 142614325
+19:04:21    497 --> ...                                                                                          [tcl] set synopsys::env(time) 142901135
+19:04:24    498 --> ...                                                                                              [tcl] set synopsys::env(time) 143193295
+19:04:27    499 --> ...                                                                                                  [tcl] set synopsys::env(time) 143521605
+19:04:30    500 --> ...  [tcl] set synopsys::env(time) 143813615
+19:04:33    501 --> ...      [tcl] set synopsys::env(time) 144107355
+19:04:36    502 --> ...          [tcl] set synopsys::env(time) 144411655
+19:04:39    503 --> ...              [tcl] set synopsys::env(time) 144697015
+19:04:42    504 --> ...                  [tcl] set synopsys::env(time) 145018005
+19:04:45    505 --> ...                      [tcl] set synopsys::env(time) 145329025
+19:04:48    506 --> ...                          [tcl] set synopsys::env(time) 145640005
+19:04:51    507 --> ...                              [tcl] set synopsys::env(time) 145962235
+19:04:54    508 --> ...                                  [tcl] set synopsys::env(time) 146246015
+19:04:57    509 --> ...                                      [tcl] set synopsys::env(time) 146564395
+19:05:00    510 --> ...                                          [tcl] set synopsys::env(time) 146887095
+19:05:03    511 --> ...                                              [tcl] set synopsys::env(time) 147230895
+19:05:06    512 --> ...                                                  [tcl] set synopsys::env(time) 147518315
+19:05:09    513 --> ...                                                      [tcl] set synopsys::env(time) 147799705
+19:05:12    514 --> ...                                                          [tcl] set synopsys::env(time) 148129265
+19:05:15    515 --> ...                                                              [tcl] set synopsys::env(time) 148427170
+19:05:18    516 --> ...                                                                  [tcl] set synopsys::env(time) 148714585
+19:05:21    517 --> ...                                                                      [tcl] set synopsys::env(time) 149015585
+19:05:24    518 --> ...                                                                          [tcl] set synopsys::env(time) 149387455
+19:05:27    519 --> ...                                                                              [tcl] set synopsys::env(time) 149706025
+19:05:30    520 --> ...                                                                                  [tcl] set synopsys::env(time) 150021265
+19:05:33    521 --> ...                                                                                      [tcl] set synopsys::env(time) 150354035
+19:05:36    522 --> ...                                                                                          [tcl] set synopsys::env(time) 150659875
+19:05:39    523 --> ...                                                                                              [tcl] set synopsys::env(time) 150996415
+19:05:42    524 --> ...                                                                                                  [tcl] set synopsys::env(time) 151318795
+19:05:45    525 --> ...  [tcl] set synopsys::env(time) 151644265
+19:05:48    526 --> ...      [tcl] set synopsys::env(time) 151956005
+19:05:51    527 --> ...          [tcl] set synopsys::env(time) 152257675
+19:05:54    528 --> ...              [tcl] set synopsys::env(time) 152565405
+19:05:57    529 --> ...                  [tcl] set synopsys::env(time) 152857345
+19:06:00    530 --> ...                      [tcl] set synopsys::env(time) 153170455
+19:06:03    531 --> ...                          [tcl] set synopsys::env(time) 153500905
+19:06:06    532 --> ...                              [tcl] set synopsys::env(time) 153795005
+19:06:09    533 --> ...                                  [tcl] set synopsys::env(time) 154096975
+19:06:12    534 --> ...                                      [tcl] set synopsys::env(time) 154419695
+19:06:15    535 --> ...                                          [tcl] set synopsys::env(time) 154713095
+19:06:18    536 --> ...                                              [tcl] set synopsys::env(time) 155015025
+19:06:21    537 --> ...                                                  [tcl] set synopsys::env(time) 155339735
+19:06:24    538 --> ...                                                      [tcl] set synopsys::env(time) 155655855
+19:06:27    539 --> ...                                                          [tcl] set synopsys::env(time) 155982535
+19:06:30    540 --> ...                                                              [tcl] set synopsys::env(time) 156320885
+19:06:33    541 --> ...                                                                  [tcl] set synopsys::env(time) 156652505
+19:06:34    542 --> ...                                                                      [tcl] ucliCore::getToolPID
+19:06:34    543 --> ...                                                                          [tcl] ucliCore::stopTool -no_signal
+19:06:34    544 --> ...                                                                              [tcl] set ucliGUI::state
+19:06:34    545 --> ...                                                                                  [tcl] set ucliGUI::state
+19:06:34    546 --> ...                                                                                      [tcl] catch {senv activeDomain} dveMisc::result 
+19:06:34    547 --> ...                                                                                          [tcl] set dveMisc::result
+19:06:34    548 --> ...                                                                                              [tcl] gui_update_simulator_buttons
+19:06:34    549 --> ...                                                                                                  [tcl] synopsys::xml get_stop_data
+19:06:34    550 --> ...  [tcl] synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" />}
+19:06:34    551 --> ...      [tcl] synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:1)" viewId="Local.1" />}
+19:06:34    552 --> ...          [tcl] synopsys::dump -add {tb.intf } -aggregates  -fid VPD0
+19:06:34    553 --> ...              [tcl] dveMisc::vbusExpand tb.modmultiply
+19:06:34    554 --> ...                  [tcl] dveMisc::vbusExpand tb.modmultiply.modmultiply
+19:06:35    555 --> ...                      [tcl] ucliGUI::vpdAddHierarchy -scope tb.modmultiply.modmultiply -depth 1 -file /home/chongyu/project/rsa_uvm/v_file/sim/inter.vpd; synopsys::dump -flush VPD0
+19:06:35    556 --> ...                          [tcl] synopsys::dump -add {tb.modmultiply.modmultiply.MPWID} -aggregates  -fid VPD0
+20:14:27    557 --> ...                              [tcl] if [catch {gui_sim_terminate}] {gui_sim_terminate -kill}
+20:14:27    558 --> ...                                  [tcl] synopsys::finish
+20:14:27    559 --> ...                                      [tcl] set ucliGUI::state
+20:14:27    560 --> ...                                          [tcl] gui_update_simulator_buttons
+20:14:28    561 --> ...                                              [tcl] set ucliGUI::state
+20:14:28    562 --> ...                                                  [tcl] catch {senv activeDomain} dveMisc::result 
+20:14:28    563 --> ...                                                      [tcl] set dveMisc::result
+20:14:28    564 --> ...                                                          [tcl] gui_update_simulator_buttons
+20:14:28    565 --> ...                                                              [tcl] catch {senv activeDomain} dveMisc::result 
+20:14:28    566 --> ...                                                                  [tcl] set dveMisc::result
+20:14:28    567 --> ...                                                                      [tcl] ucli_exit
